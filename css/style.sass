@@ -8,6 +8,10 @@ $clr-bg-browser-preview: #fbfaf8
 $clr-bg-mobile-devices: #fbfaf8
 $clr-bg-footer-bg: #191919
 $clr-bg-footer-sm: #111111
+$clr-section-icon: #555555
+$clr-section-marker: #f1eee9
+$clr-purchase-now-button: #998675
+
 // Backgrounds
 $bg-header: url(../img/bg_header_mountains.jpg)
 $bg-presentation: url(../img/bg_video_thumb.jpg)
@@ -27,6 +31,9 @@ $bg-browser-preview-right: url(../img/bg_browser_right.jpg)
 // Styles
 *
 	box-sizing: border-box
+
+p, h1, h2, h3
+	margin: 0
 .wrapper-main
 	width: $size-wrapper-main-width
 	background-color: $clr-bg-body
@@ -67,15 +74,62 @@ $bg-browser-preview-right: url(../img/bg_browser_right.jpg)
 
 .sections
 	height: 373px
+	padding: 0 376px
+	display: flex
+	flex-direction: row
+	justify-content: space-around
+	align-items: center
+	.section
+		width: 266px
+		display: flex
+		flex-direction: column
+		justify-content: space-around
+		align-items: center
+		.section__icon
+			height: 50px
+			&--dev
+				width: 43px
+			&--marketing
+				width: 51px
+		.section__marker
+			width: 70px
+			height: 3px
+			background-color: $clr-section-marker
 .browser-preview
 	height: 700px
+	padding-top: 83px
 	background-color: $clr-bg-browser-preview
 	background-image: $bg-browser-preview-center, $bg-browser-preview-right, $bg-browser-preview-left
 	background-repeat: no-repeat, no-repeat, no-repeat
 	background-position: 576px 100%, 806px 100%, 346px 100%
+	.browser-preview__wrapper
+		width: 770px
+		margin: 0 auto
+		padding: 0 7px
+		text-align: center
 .purchase-now
 	height: 150px
+	padding: 0 376px
 	background-image: $bg-purchase-now
+	display: flex
+	flex-direction: row
+	justify-content: space-between
+	align-items: center
+	&__header
+		color: #fff
+	.letterhead
+		color: #c7b299
+	&__text
+		color: #615855
+	&__button
+		width: 170px
+		height: 50px
+		border: none
+		border-radius: 3px
+		outline: none
+		background-color: $clr-purchase-now-button
+		color: #fff
+		text-transform: uppercase
 .projects
 	height: 1162px
 .presentation
