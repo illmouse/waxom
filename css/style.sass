@@ -1,0 +1,103 @@
+// Sizes
+$size-wrapper-main-width: 1920px
+$size-logo-waxom-width: 63px
+$size-header-top-width: 1170px
+//  Colors
+$clr-bg-body: #fff
+$clr-bg-browser-preview: #fbfaf8
+$clr-bg-mobile-devices: #fbfaf8
+$clr-bg-footer-bg: #191919
+$clr-bg-footer-sm: #111111
+// Backgrounds
+$bg-header: url(../img/bg_header_mountains.jpg)
+$bg-presentation: url(../img/bg_video_thumb.jpg)
+$bg-clients: url(../img/bg_clients_mountain.png)
+$bg-purchase-now: linear-gradient(to right, #211b19 0%, #4e3427 100%)
+$bg-counters: linear-gradient(to right, #211b19 0%, #4e3427 100%)
+$bg-mobile-devices: url(../img/bg_phone_in_hand.png)
+$bg-browser-preview-left: url(../img/bg_browser_left.jpg)
+$bg-browser-preview-center: url(../img/bg_browser_center.jpg)
+$bg-browser-preview-right: url(../img/bg_browser_right.jpg)
+
+// Images
+
+// Icons
+
+// Fonts
+// Styles
+*
+	box-sizing: border-box
+.wrapper-main
+	width: $size-wrapper-main-width
+	background-color: $clr-bg-body
+	margin: 0 auto
+.header
+	height: 1024px
+	background-image: linear-gradient(to top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), $bg-header
+	background-repeat: no-repeat, no-repeat
+	padding-top: 40px
+	.header-top
+		display: flex
+		flex-direction: row
+		flex-wrap: nowrap
+		justify-content: space-between
+		width: $size-header-top-width
+		margin: 0 auto
+		.navbar
+			display: flex
+			flex-direction: row
+			flex-wrap: nowrap
+			justify-content: flex-end
+			align-items: center
+			.navbar-menu
+				display: flex
+				flex-direction: row
+				flex-wrap: nowrap
+				justify-content: space-between
+				align-items: center
+				min-width: 640px
+				margin-right: 63px
+				color: #fff
+			.navbar-ico
+				min-width: 70px
+				display: flex
+				flex-direction: row
+				flex-wrap: nowrap
+				justify-content: space-between
+
+.sections
+	height: 373px
+.browser-preview
+	height: 700px
+	background-color: $clr-bg-browser-preview
+	background-image: $bg-browser-preview-center, $bg-browser-preview-right, $bg-browser-preview-left
+	background-repeat: no-repeat, no-repeat, no-repeat
+	background-position: 576px 100%, 806px 100%, 346px 100%
+.purchase-now
+	height: 150px
+	background-image: $bg-purchase-now
+.projects
+	height: 1162px
+.presentation
+	height: 705px
+	background-image: $bg-presentation
+.mobile-devices
+	height: 695px
+	background-color: $clr-bg-mobile-devices
+	background-image: $bg-mobile-devices
+	background-repeat: no-repeat
+	background-position: 423px 100%
+.counters
+	height: 300px
+	background-image: $bg-counters
+.clients
+	height: 489px
+	background-image: $bg-clients
+.footer
+	height: 619px
+	.footer-bg
+		height: 508px
+		background-color: $clr-bg-footer-bg
+	.footer-sm
+		height: 111px
+		background-color: $clr-bg-footer-sm

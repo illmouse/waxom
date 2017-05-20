@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+%html{:lang => "en"}
+	%head
+		%meta{:charset => "UTF-8"}
+		%title Waxom - About Us
+		%link{:rel => "stylesheet", :href => "css/style.css"}
+
+		- @menu = ['Home', 'About Us', 'Portfolio', 'Features', 'Blog', 'Pricing', 'Shortcodes', 'Contact']
+	%body
+		.wrapper-main
+			.header
+				.header-top
+					%img.header__logo{:src => "img/logo_waxom.png", :alt => "Waxom-logo"}
+					.navbar
+						.navbar-menu
+							-@menu.each do |value|
+								%div{:class => "navbar-menu__item"}
+									#{value}
+						.navbar-ico
+							%img.navbar__icon{:src => "img/ico_header_cart.png", :alt => "Cart"}
+							%img.navbar__icon{:src => "img/ico_header_search.png", :alt => "Search"}
+
+				.carousel
+			.sections
+			.browser-preview
+			.purchase-now
+			.projects
+			.presentation
+			.mobile-devices
+			.counters
+			.recent-posts
+			.clients
+			.footer
+				.footer-bg
+				.footer-sm
+	
