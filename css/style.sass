@@ -22,12 +22,58 @@ $bg-mobile-devices: url(../img/bg_phone_in_hand.png)
 $bg-browser-preview-left: url(../img/bg_browser_left.jpg)
 $bg-browser-preview-center: url(../img/bg_browser_center.jpg)
 $bg-browser-preview-right: url(../img/bg_browser_right.jpg)
-
+$bg-projects-preview-block--1: url(../img/img_project_phone.jpg)
+$bg-projects-preview-block--2: url(../img/img_project_mount.jpg)
+$bg-projects-preview-block--3: url(../img/img_project_paragpaph.jpg)
+$bg-projects-preview-block--4: url(../img/img_project_birds.jpg)
+$bg-projects-preview-block--5: url(../img/img_project_book.jpg)
+$bg-projects-preview-block--6: url(../img/img_project_sea.jpg)
+$bg-recent-posts-block--1: url(../img/img_post_feet.jpg)
+$bg-recent-posts-block--2: url(../img/img_post_comp.jpg)
+$bg-recent-posts-block--3: url(../img/img_post_ship.jpg)
+$bg-footer-bg-section-widget--1: url(../img/img_widget_phone.jpg)
+$bg-footer-bg-section-widget--2: url(../img/img_widget_paper.jpg)
+$bg-footer-bg-section-widget--3: url(../img/img_widget_book.jpg)
+$bg-footer-bg-section-widget--4: url(../img/img_widget_icons.jpg)
 // Images
 
 // Icons
 
 // Fonts
+@import url('https://fonts.googleapis.com/css?family=Raleway:400,500,600,700,800')
+
+@font-face
+	font-family: 'Roboto'
+	src: url(../fonts/Roboto/Roboto-Regular.ttf)
+	font-weight: 400
+@font-face
+	font-family: 'Montserrat'
+	src: url(../fonts/Montserrat/Montserrat-Regular.ttf)
+	font-weight: 400
+@font-face
+	font-family: 'Montserrat'
+	src: url(../fonts/Montserrat/Montserrat-ExtraLight.ttf)
+	font-weight: 200
+@font-face
+	font-family: 'Montserrat'
+	src: url(../fonts/Montserrat/Montserrat-Light.ttf)
+	font-weight: 300
+
+=fnt-raleway($weight, $size, $line-height)
+	font-family: 'Raleway'
+	font-weight: $weight
+	font-size: $size
+	line-height: $line-height
+=fnt-roboto($weight, $size, $line-height)
+	font-family: 'Roboto'
+	font-weight: $weight
+	font-size: $size
+	line-height: $line-height
+=fnt-montseratt($weight, $size, $line-height)
+	font-family: 'Montserrat'
+	font-weight: $weight
+	font-size: $size
+	line-height: $line-height
 // Styles
 *
 	box-sizing: border-box
@@ -43,7 +89,16 @@ p, h1, h2, h3
 	background-image: linear-gradient(to top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), $bg-header
 	background-repeat: no-repeat, no-repeat
 	padding-top: 40px
-	.header-top
+	&-top-logo-wrapper
+		display: flex
+		flex-direction: row
+		flex-wrap: nowrap
+		justify-content: space-between
+		align-items: center
+	&__name
+		+fnt-raleway(400, 34px, normal)
+		color: #fff
+	&-top
 		display: flex
 		flex-direction: row
 		flex-wrap: nowrap
@@ -64,6 +119,7 @@ p, h1, h2, h3
 				align-items: center
 				min-width: 640px
 				margin-right: 63px
+				+fnt-montseratt(300, 14px, normal)
 				color: #fff
 			.navbar-ico
 				min-width: 70px
@@ -71,7 +127,6 @@ p, h1, h2, h3
 				flex-direction: row
 				flex-wrap: nowrap
 				justify-content: space-between
-
 .sections
 	height: 373px
 	padding: 0 376px
@@ -80,18 +135,28 @@ p, h1, h2, h3
 	justify-content: space-around
 	align-items: center
 	.section
-		width: 266px
+		width: 267px
 		display: flex
 		flex-direction: column
 		justify-content: space-around
 		align-items: center
-		.section__icon
+		&__icon
 			height: 50px
+			margin-bottom: 30px
 			&--dev
 				width: 43px
 			&--marketing
 				width: 51px
-		.section__marker
+		&__header
+			+fnt-raleway(600, 22px, normal)
+			color: #555555
+			margin-bottom: 19px
+		&__text
+			+fnt-montseratt(300, 14px, 24px)
+			color: #8c8c8c
+			text-align: center
+			margin-bottom: 30px
+		&__marker
 			width: 70px
 			height: 3px
 			background-color: $clr-section-marker
@@ -102,11 +167,18 @@ p, h1, h2, h3
 	background-image: $bg-browser-preview-center, $bg-browser-preview-right, $bg-browser-preview-left
 	background-repeat: no-repeat, no-repeat, no-repeat
 	background-position: 576px 100%, 806px 100%, 346px 100%
-	.browser-preview__wrapper
+	.browser-preview-wrapper
 		width: 770px
 		margin: 0 auto
 		padding: 0 7px
 		text-align: center
+	&__header
+		+fnt-raleway(600, 30px, normal)
+		color: #555555
+		margin-bottom: 24px
+	&__text
+		+fnt-montseratt(300, 16px, 28px)
+		color: #8c8c8c
 .purchase-now
 	height: 150px
 	padding: 0 376px
@@ -116,10 +188,12 @@ p, h1, h2, h3
 	justify-content: space-between
 	align-items: center
 	&__header
+		+fnt-raleway(400, 28px, normal)
 		color: #fff
-	.letterhead
-		color: #c7b299
+		.letterhead
+			color: #c7b299
 	&__text
+		+fnt-montseratt(300, 18px, normal)
 		color: #615855
 	&__button
 		width: 170px
@@ -128,10 +202,99 @@ p, h1, h2, h3
 		border-radius: 3px
 		outline: none
 		background-color: $clr-purchase-now-button
+		+fnt-raleway(700, 14px, 23px)
 		color: #fff
 		text-transform: uppercase
 .projects
 	height: 1162px
+	padding-top: 81px 
+	&-wrapper
+		width: 1170px
+		margin: 0 auto
+		text-align: center
+	&__header
+		+fnt-raleway(600, 30px, normal)
+		color: #555555
+		margin-bottom: 24px
+	&__text
+		+fnt-montseratt(300, 16px, 28px)
+		color: #8c8c8c
+		margin-bottom: 40px
+	&-sections
+		width: 605px
+		margin: 0 auto
+		display: flex
+		flex-direction: row
+		justify-content: space-between
+	&__section
+		min-width: 70px
+		height: 32px
+		padding: 5px 25px 0 25px
+		border: 1px solid #ebebeb
+		border-radius: 3px
+		text-align: center
+		+fnt-montseratt(300, 14px, 21px)
+		color: #8c8c8c
+	&-preview
+		display: flex
+		flex-direction: row
+		flex-wrap: wrap
+		justify-content: space-between
+		margin: 40px 0 10px 0
+		.preview__block
+			width: 370px
+			height: 337px
+			display: flex
+			flex-direction: column
+			flex-wrap: nowrap
+			justify-content: flex-end
+			margin-bottom: 30px
+			.block__bottom
+				height: 100px
+				background-color: #fbfaf8
+				padding: 30px 0 0 28px
+				text-align: left
+				.block__header
+					+fnt-raleway(500, 20px, normal)
+					color: #c7b299
+					margin-bottom: 5px
+				.block__text
+					+fnt-montseratt(300, 14px, 20px)
+					color: #d1d1d1
+				&--dark
+					background-color: #362f2d
+					.block__header
+						color: #fff
+					.block__text
+						color: #c7b299
+			&--1
+				background-image: $bg-projects-preview-block--1
+				background-repeat: no-repeat
+			&--2
+				background-image: $bg-projects-preview-block--2
+				background-repeat: no-repeat
+			&--3
+				background-image: $bg-projects-preview-block--3
+				background-repeat: no-repeat
+			&--4
+				background-image: $bg-projects-preview-block--4
+				background-repeat: no-repeat
+			&--5
+				background-image: $bg-projects-preview-block--5
+				background-repeat: no-repeat
+			&--6
+				background-image: $bg-projects-preview-block--6
+				background-repeat: no-repeat
+	&__button
+		width: 170px
+		height: 50px
+		background-color: #998675
+		+fnt-raleway(700, 14px, 23px)
+		color: #fff
+		text-transform: uppercase
+		border: none
+		outline: none
+		border-radius: 3px
 .presentation
 	height: 705px
 	background-image: $bg-presentation
@@ -141,17 +304,204 @@ p, h1, h2, h3
 	background-image: $bg-mobile-devices
 	background-repeat: no-repeat
 	background-position: 423px 100%
+	padding: 195px 0 0 877px
+	.mobile-devices-wrapper
+		width: 657px
+	&__header
+		+fnt-raleway(600, 30px, normal)
+		color: #555555
+	&__text
+		+fnt-montseratt(300, 16px, 28px)
+		color: #8c8c8c
+	&__list
+		+fnt-montseratt(300, 16px, 32px)
+		color: #8c8c8c
 .counters
 	height: 300px
 	background-image: $bg-counters
+	padding: 69px
+	&-wrapper
+		width: 920px
+		margin: 0 auto
+		display: flex
+		flex-direction: row
+		flex-wrap: nowrap
+		justify-content: space-between
+	&-block
+		display: flex
+		flex-direction: column
+		align-items: center
+	&__icon
+		margin-bottom: 30px
+	&__number
+		+fnt-montseratt(200, 48px, 36px)
+		color: #fff
+		margin-bottom: 21px
+	&__text
+		+fnt-montseratt(300, 14px, 20px)
+		color: #c7b299
+		margin-bottom: 30px
+	&_marker
+		width: 30px
+		height: 2px
+		background-color: #fff
+.recent-posts
+	height: 753px
+	background-color: #fff
+	padding-top: 82px
+	&-wrapper
+		width: 1170px
+		margin: 0 auto
+		text-align: center
+	&__header
+		+fnt-raleway(600, 30px, normal)
+		color: #555555
+	&__text
+		+fnt-montseratt(300, 16px, 28px)
+		color: #8c8c8c
+	&-preview
+		display: flex
+		flex-direction: row
+		flex-wrap: nowrap
+		justify-content: space-between
+		margin: 40px 0 40px 0
+		.recent-posts-block
+			display: flex
+			flex-direction: column
+			justify-content: flex-end
+			width: 370px
+			height: 395px
+			border: 1px solid #f8f8f8
+			&-bottom
+				height: 175px
+				&__header
+					+fnt-raleway(500, 20px, normal)
+					color: #555555
+				&__text
+					+fnt-montseratt(300, 14px, 22px)
+					color: #8c8c8c
+				&__link
+					+fnt-montseratt(300, 14px, 20px)
+					color: #c7b299
+			&-bottom--dark
+				background-color: #362f2d
+				.recent-posts-block-bottom__header
+					color: #c7b299
+				.recent-posts-block-bottom__text
+					color: #fff
+
+			&--1
+				background-image: $bg-recent-posts-block--1
+				background-repeat: no-repeat			
+			&--2
+				background-image: $bg-recent-posts-block--2
+				background-repeat: no-repeat			
+			&--3
+				background-image: $bg-recent-posts-block--3
+				background-repeat: no-repeat
 .clients
 	height: 489px
 	background-image: $bg-clients
+	padding-top: 140px
+	&-wrapper
+		width: 1110px
+		margin: 0 auto
+		display: flex
+		flex-direction: row
+		flex-wrap: nowrap
+		justify-content: space-around
+		align-items: center
+		align-content: center
+	&__logo
+		padding-right: 90px
 .footer
 	height: 619px
 	.footer-bg
 		height: 508px
+		padding-top: 80px
 		background-color: $clr-bg-footer-bg
+		&-wrapper
+			width: 1170px
+			margin: 0 auto
+			display: flex
+			flex-direction: row
+			flex-wrap: nowrap
+			justify-content: space-between
+			.footer-bg-section
+				width: 270px
+				&__header
+					height: 57px
+					margin-bottom: 30px
+					padding-bottom: 10px
+					display: flex
+					flex-direction: row
+					align-items: flex-end
+					+fnt-raleway(700, 24px, normal)
+					color: #fff
+				&__header--logo
+					+fnt-raleway(400, 34px, normal)
+					align-items: center
+					padding-bottom: 0
+				&__p
+					+fnt-montseratt(300, 14px, 24px)
+					color: #555555
+					.footer-bg-section__date
+						+fnt-montseratt(300, 12px, 20px)
+						color: #363636
+				&__link
+					+fnt-montseratt(300, 12px, 20px)
+				&__tag
+					color: #00bff3
+				&__shortlink
+					color: #959595
+				&__separator
+					width: 100%
+					height: 1px
+					background-color: #252525
+					margin: 20px 0 20px 0
+				&-widgets
+					display: flex
+					flex-direction: row
+					flex-wrap: wrap
+					justify-content: space-between
+					.footer-bg-section-widget
+						width: 130px
+						height: 98px
+						margin-bottom: 10px
+						background-repeat: no-repeat
+						&--1
+							background-image: $bg-footer-bg-section-widget--1						
+						&--2
+							background-image: $bg-footer-bg-section-widget--2					
+						&--3
+							background-image: $bg-footer-bg-section-widget--3						
+						&--4
+							background-image: $bg-footer-bg-section-widget--4
 	.footer-sm
 		height: 111px
 		background-color: $clr-bg-footer-sm
+		padding-top: 45px
+		color: #555555
+		&-wrapper
+			width: 1170px
+			margin: 0 auto
+			display: flex
+			flex-direction: row
+			justify-content: space-between
+			+fnt-montseratt(300, 13px, 20px)
+			color: #555555
+		&-left
+			display: flex
+			flex-direction: row
+			justify-content: space-between
+		&-right
+			display: flex
+			flex-direction: row
+			justify-content: space-between
+		&__separator
+			width: 1px
+			height: 100%
+			margin: 0 10px
+			background-color: #555555
+		&__selection
+			color: #959595
