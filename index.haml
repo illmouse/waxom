@@ -18,32 +18,51 @@
 						.navbar-menu
 							-@menu.each do |value|
 								%div{:class => "navbar-menu__item"}
-									#{value}
+									%a{:href => "#"}
+										#{value}
 						.navbar-ico
-							%img.navbar__icon{:src => "img/ico_header_cart.png", :alt => "Cart"}
-							%img.navbar__icon{:src => "img/ico_header_search.png", :alt => "Search"}
+							%a{:href => "#"}
+								%img.navbar__icon{:src => "img/ico_header_cart.png", :alt => "Cart"}
+							%a{:href => "#"}
+								%img.navbar__icon{:src => "img/ico_header_search.png", :alt => "Search"}
 				.carousel
 			.sections
-				.section.section-web
-					%img.section__icon.section__icon--web{:src => "img/ico_web.svg", :alt => "Waxom Web"}
-					%h3.section__header Web & App Design
-					%p.section__text Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim.
-					.section__marker
-				.section.section-dev
-					%img.section__icon.section__icon--dev{:src => "img/ico_dev.svg", :alt => "Waxom Development"}
-					%h3.section__header Development
-					%p.section__text Lorem ipsum dolor sit amet, adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet.
-					.section__marker
-				.section.section-custom
-					%img.section__icon.section__icon--custom{:src => "img/ico_customization.svg", :alt => "Waxom Customization"}
-					%h3.section__header Customization
-					%p.section__text Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim.
-					.section__marker
-				.section.section-marketing
-					%img.section__icon.section__icon--marketing{:src => "img/ico_marketing.svg", :alt => "Waxom Marketing"}
-					%h3.section__header Marketing
-					%p.section__text Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim.
-					.section__marker
+				%a{:href => "#"}
+					.section.section-web
+						-# %img.section__icon.section__icon--web{:src => "img/ico_web.svg", :alt => "Waxom Web"}
+						%svg.section__icon.section__icon--custom{:xmlns => "http://www.w3.org/2000/svg", :width => "49", :height => "49", :viewBox => "0 0 49 49"}
+							%path{:d => "M47.67 17.47a1.6 1.6 0 0 0-2.25 0L31.57 31.31l-19.46 8.58-3-3 8.57-19.47L31.53 3.58a1.6 1.6 0 0 0-2.25-2.25L15 15.59.53 48.46 33.4 33.99l14.27-14.27a1.6 1.6 0 0 0 0-2.25zm-20.17 11c.3.3.71.46 1.12.46.4 0 .81-.16 1.13-.46l13.33-13.34a1.59 1.59 0 1 0-2.25-2.25L27.5 26.22a1.6 1.6 0 0 0 0 2.25zM24 24.99a1.62 1.62 0 0 0 2.25 0L39.6 11.65a1.6 1.6 0 0 0-2.25-2.25L24 22.73a1.6 1.6 0 0 0 0 2.26zm-3.48-3.49a1.6 1.6 0 0 0 2.25 0L36.12 8.17a1.59 1.59 0 1 0-2.25-2.25L20.53 19.25a1.6 1.6 0 0 0 0 2.25z"}
+							%path{:class => "fill", :fill => "#555", :d => "M47.67 17.47a1.6 1.6 0 0 0-2.25 0L31.57 31.31l-19.46 8.58-3-3 8.57-19.47L31.53 3.58a1.6 1.6 0 0 0-2.25-2.25L15 15.59.53 48.46 33.4 33.99l14.27-14.27a1.6 1.6 0 0 0 0-2.25zm-20.17 11c.3.3.71.46 1.12.46.4 0 .81-.16 1.13-.46l13.33-13.34a1.59 1.59 0 1 0-2.25-2.25L27.5 26.22a1.6 1.6 0 0 0 0 2.25zM24 24.99a1.62 1.62 0 0 0 2.25 0L39.6 11.65a1.6 1.6 0 0 0-2.25-2.25L24 22.73a1.6 1.6 0 0 0 0 2.26zm-3.48-3.49a1.6 1.6 0 0 0 2.25 0L36.12 8.17a1.59 1.59 0 1 0-2.25-2.25L20.53 19.25a1.6 1.6 0 0 0 0 2.25z"}
+						%h3.section__header Web & App Design
+						%p.section__text Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim.
+						.section__marker
+				%a{:href => "#"}
+					.section.section-dev
+						-# %img.section__icon.section__icon--dev{:src => "img/ico_dev.svg", :alt => "Waxom Development"}
+						%svg.section__icon.section__icon--dev{:xmlns => "http://www.w3.org/2000/svg", :width => "129", :height => "118", :viewBox => "0 0 129 118"} 
+							%path{:d => "M64.55.33L.25 35.01l64.3 34.68 64.31-34.68zm0 80.55L12.2 52.65.24 59.1l64.31 34.65 64.31-34.65-11.95-6.45zm0 24.06L12.2 76.71.24 83.16l64.31 34.68 64.31-34.68-11.95-6.45z"}
+							%path{:class => "fill", :fill => "#555", :d => "M64.55.33L.25 35.01l64.3 34.68 64.31-34.68zm0 80.55L12.2 52.65.24 59.1l64.31 34.65 64.31-34.65-11.95-6.45zm0 24.06L12.2 76.71.24 83.16l64.31 34.68 64.31-34.68-11.95-6.45z"}
+						%h3.section__header Development
+						%p.section__text Lorem ipsum dolor sit amet, adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet.
+						.section__marker
+				%a{:href => "#"}
+					.section.section-custom
+						-# %img.section__icon.section__icon--custom{:src => "img/ico_customization.svg", :alt => "Waxom Customization"}
+						%svg.section__icon.section__icon--custom{:xmlns => "http://www.w3.org/2000/svg", :width => "44", :height => "44", :viewBox => "0 0 44 44"}
+							%path{:d => "M43.93 21.85a4.33 4.33 0 0 0-2.61-3.86c-1.44-.51-2.83-1.75-3.24-2.74-.4-.98-.3-2.85.36-4.23a4.37 4.37 0 0 0-.89-4.58 4.32 4.32 0 0 0-4.57-.88c-1.38.65-3.25.76-4.23.35-.99-.4-2.23-1.8-2.74-3.24a4.34 4.34 0 0 0-3.87-2.6 4.32 4.32 0 0 0-3.86 2.6c-.51 1.44-1.76 2.84-2.74 3.24-.98.41-2.85.3-4.23-.35a4.32 4.32 0 0 0-4.57.88 4.33 4.33 0 0 0-.89 4.58c.66 1.38.76 3.25.35 4.23-.4.98-1.79 2.23-3.23 2.74a4.33 4.33 0 0 0-2.61 3.86 4.33 4.33 0 0 0 2.61 3.86c1.44.51 2.83 1.76 3.24 2.74.4.98.3 2.85-.36 4.23a4.33 4.33 0 0 0 .89 4.58 4.32 4.32 0 0 0 4.57.88c1.38-.65 3.25-.76 4.23-.35.98.41 2.23 1.8 2.74 3.24a4.32 4.32 0 0 0 3.86 2.6 4.34 4.34 0 0 0 3.87-2.6c.51-1.44 1.75-2.83 2.73-3.24.99-.41 2.86-.3 4.24.35 1.38.66 3.42.26 4.57-.88a4.37 4.37 0 0 0 .89-4.58c-.66-1.38-.77-3.25-.36-4.23.4-.98 1.8-2.23 3.24-2.74a4.33 4.33 0 0 0 2.61-3.86zm-21.79 7.99a7.98 7.98 0 1 1 0-15.97 7.99 7.99 0 1 1 0 15.97z"}
+							%path{:class => "fill", :fill => "#555", :d => "M43.93 21.85a4.33 4.33 0 0 0-2.61-3.86c-1.44-.51-2.83-1.75-3.24-2.74-.4-.98-.3-2.85.36-4.23a4.37 4.37 0 0 0-.89-4.58 4.32 4.32 0 0 0-4.57-.88c-1.38.65-3.25.76-4.23.35-.99-.4-2.23-1.8-2.74-3.24a4.34 4.34 0 0 0-3.87-2.6 4.32 4.32 0 0 0-3.86 2.6c-.51 1.44-1.76 2.84-2.74 3.24-.98.41-2.85.3-4.23-.35a4.32 4.32 0 0 0-4.57.88 4.33 4.33 0 0 0-.89 4.58c.66 1.38.76 3.25.35 4.23-.4.98-1.79 2.23-3.23 2.74a4.33 4.33 0 0 0-2.61 3.86 4.33 4.33 0 0 0 2.61 3.86c1.44.51 2.83 1.76 3.24 2.74.4.98.3 2.85-.36 4.23a4.33 4.33 0 0 0 .89 4.58 4.32 4.32 0 0 0 4.57.88c1.38-.65 3.25-.76 4.23-.35.98.41 2.23 1.8 2.74 3.24a4.32 4.32 0 0 0 3.86 2.6 4.34 4.34 0 0 0 3.87-2.6c.51-1.44 1.75-2.83 2.73-3.24.99-.41 2.86-.3 4.24.35 1.38.66 3.42.26 4.57-.88a4.37 4.37 0 0 0 .89-4.58c-.66-1.38-.77-3.25-.36-4.23.4-.98 1.8-2.23 3.24-2.74a4.33 4.33 0 0 0 2.61-3.86zm-21.79 7.99a7.98 7.98 0 1 1 0-15.97 7.99 7.99 0 1 1 0 15.97z"}
+						%h3.section__header Customization
+						%p.section__text Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim.
+						.section__marker
+				%a{:href => "#"}
+					.section.section-marketing
+						-# %img.section__icon.section__icon--marketing{:src => "img/ico_marketing.svg", :alt => "Waxom Marketing"}
+						%svg.section__icon.section__icon--custom{:xmlns => "http://www.w3.org/2000/svg", :width => "52", :height => "36", :viewBox => "0 0 52 36"}
+							%path{:d => "M9 13.25a6.79 6.79 0 0 1 5.74-3.61h26.21V7.98a2.48 2.48 0 0 0-2.46-2.48H27.67V4.06A3.7 3.7 0 0 0 23.99.33H17.7c-.98 0-1.91.39-2.61 1.1-.7.7-1.08 1.63-1.08 2.63V5.5H3.2A2.48 2.48 0 0 0 .74 7.98v22.17zm7.47-9.19c0-.33.13-.64.36-.88.23-.24.54-.36.87-.36h6.29c.68 0 1.23.55 1.23 1.24V5.5h-8.75zm34.94 10.28c.6-1.22-.02-2.22-1.37-2.22h-35.3c-1.35 0-2.94 1-3.54 2.22L1.71 33.76c-.6 1.22.02 2.22 1.37 2.22h35.3c1.35 0 2.95-1 3.54-2.22z"}
+							%path{:class => "fill", :fill => "#555", :d => "M9 13.25a6.79 6.79 0 0 1 5.74-3.61h26.21V7.98a2.48 2.48 0 0 0-2.46-2.48H27.67V4.06A3.7 3.7 0 0 0 23.99.33H17.7c-.98 0-1.91.39-2.61 1.1-.7.7-1.08 1.63-1.08 2.63V5.5H3.2A2.48 2.48 0 0 0 .74 7.98v22.17zm7.47-9.19c0-.33.13-.64.36-.88.23-.24.54-.36.87-.36h6.29c.68 0 1.23.55 1.23 1.24V5.5h-8.75zm34.94 10.28c.6-1.22-.02-2.22-1.37-2.22h-35.3c-1.35 0-2.94 1-3.54 2.22L1.71 33.76c-.6 1.22.02 2.22 1.37 2.22h35.3c1.35 0 2.95-1 3.54-2.22z"}
+						%h3.section__header Marketing
+						%p.section__text Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim.
+						.section__marker
 			.browser-preview
 				.browser-preview-wrapper
 					%h2.browser-preview__header Waxom is Realization of your Ideas.

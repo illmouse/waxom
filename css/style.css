@@ -21,6 +21,10 @@
 p, h1, h2, h3 {
   margin: 0; }
 
+a {
+  text-decoration: none;
+  color: inherit; }
+
 .wrapper-main {
   width: 1920px;
   background-color: #fff;
@@ -69,12 +73,20 @@ p, h1, h2, h3 {
         font-size: 14px;
         line-height: normal;
         color: #fff; }
+        .header-top .navbar .navbar-menu__item {
+          transition: color 0.3s ease; }
+          .header-top .navbar .navbar-menu__item:hover {
+            color: #c7b299; }
       .header-top .navbar .navbar-ico {
         min-width: 70px;
         display: flex;
         flex-direction: row;
         flex-wrap: nowrap;
         justify-content: space-between; }
+        .header-top .navbar .navbar-ico .navbar__icon {
+          transition: all 0.3s ease; }
+          .header-top .navbar .navbar-ico .navbar__icon:hover {
+            filter: invert(0.5) sepia(100%); }
 
 .sections {
   height: 373px;
@@ -102,7 +114,8 @@ p, h1, h2, h3 {
       font-size: 22px;
       line-height: normal;
       color: #555555;
-      margin-bottom: 19px; }
+      margin-bottom: 19px;
+      transition: all 0.5s ease; }
     .sections .section__text {
       font-family: "Montserrat";
       font-weight: 300;
@@ -114,7 +127,16 @@ p, h1, h2, h3 {
     .sections .section__marker {
       width: 70px;
       height: 3px;
-      background-color: #f1eee9; }
+      background-color: #f1eee9;
+      transition: all 0.5s ease; }
+    .sections .section .fill {
+      transition: all 0.5s ease; }
+    .sections .section:hover .fill {
+      fill: #c7b299; }
+    .sections .section:hover .section__header {
+      color: #c7b299; }
+    .sections .section:hover .section__marker {
+      background-color: #c7b299; }
 
 .browser-preview {
   height: 700px;
@@ -531,7 +553,6 @@ p, h1, h2, h3 {
         .footer .footer-bg-wrapper .footer-bg-section__header {
           height: 57px;
           margin-bottom: 30px;
-          padding-bottom: 10px;
           display: flex;
           flex-direction: row;
           align-items: flex-end;
@@ -564,12 +585,23 @@ p, h1, h2, h3 {
           .footer .footer-bg-wrapper .footer-bg-section__p:hover p {
             color: #c7b299; }
         .footer .footer-bg-wrapper .footer-bg-section__link {
+          display: flex;
+          justify-content: flex-start;
+          align-items: center;
           font-family: "Montserrat";
           font-weight: 400;
           font-size: 14px;
           line-height: 20px;
-          color: #fff;
-          margin-top: 33px; }
+          color: #d1d1d1;
+          margin-top: 20px; }
+          .footer .footer-bg-wrapper .footer-bg-section__link::after {
+            display: block;
+            content: "";
+            width: 0;
+            height: 0;
+            border: 5px solid transparent;
+            border-left: 5px solid #d1d1d1;
+            margin-left: 9px; }
         .footer .footer-bg-wrapper .footer-bg-section__tag {
           color: #00bff3; }
         .footer .footer-bg-wrapper .footer-bg-section__shortlink {

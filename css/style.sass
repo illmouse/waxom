@@ -80,6 +80,9 @@ $bg-footer-bg-section-widget--4: url(../img/img_widget_icons.jpg)
 
 p, h1, h2, h3
 	margin: 0
+a
+	text-decoration: none
+	color: inherit
 .wrapper-main
 	width: $size-wrapper-main-width
 	background-color: $clr-bg-body
@@ -121,12 +124,20 @@ p, h1, h2, h3
 				margin-right: 63px
 				+fnt-montseratt(300, 14px, normal)
 				color: #fff
+				&__item
+					transition: color .3s ease
+					&:hover
+						color: #c7b299
 			.navbar-ico
 				min-width: 70px
 				display: flex
 				flex-direction: row
 				flex-wrap: nowrap
 				justify-content: space-between
+				.navbar__icon
+					transition: all .3s ease
+					&:hover
+						filter: invert(0.5) sepia(100%)
 .sections
 	height: 373px
 	padding: 0 376px
@@ -151,6 +162,7 @@ p, h1, h2, h3
 			+fnt-raleway(600, 22px, normal)
 			color: #555555
 			margin-bottom: 19px
+			transition: all .5s ease
 		&__text
 			+fnt-montseratt(300, 14px, 24px)
 			color: #8c8c8c
@@ -160,6 +172,16 @@ p, h1, h2, h3
 			width: 70px
 			height: 3px
 			background-color: $clr-section-marker
+			transition: all .5s ease
+		.fill
+			transition: all .5s ease
+		&:hover
+			.fill
+				fill: #c7b299
+			.section__header
+				color: #c7b299
+			.section__marker
+				background-color: #c7b299
 .browser-preview
 	height: 700px
 	padding-top: 83px
@@ -499,7 +521,6 @@ p, h1, h2, h3
 				&__header
 					height: 57px
 					margin-bottom: 30px
-					padding-bottom: 10px
 					display: flex
 					flex-direction: row
 					align-items: flex-end
@@ -521,9 +542,20 @@ p, h1, h2, h3
 						p
 							color: #c7b299
 				&__link
+					display: flex
+					justify-content: flex-start
+					align-items: center
 					+fnt-montseratt(400, 14px, 20px)
-					color: #fff
-					margin-top: 33px
+					color: #d1d1d1
+					margin-top: 20px
+					&::after
+						display: block
+						content: ''
+						width: 0
+						height: 0
+						border: 5px solid transparent
+						border-left: 5px solid #d1d1d1
+						margin-left: 9px
 				&__tag
 					color: #00bff3
 				&__shortlink
