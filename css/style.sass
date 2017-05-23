@@ -317,6 +317,13 @@ a
 		border: none
 		outline: none
 		border-radius: 3px
+		transition: all .5s ease
+		&:hover
+			filter: invert(0.4)
+			// background-image: linear-gradient(to top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.2))
+		&:active
+			background-image: linear-gradient(to top, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5))
+
 .presentation
 	height: 705px
 	background-image: $bg-presentation

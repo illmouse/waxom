@@ -306,7 +306,12 @@ a {
     text-transform: uppercase;
     border: none;
     outline: none;
-    border-radius: 3px; }
+    border-radius: 3px;
+    transition: all 0.5s ease; }
+    .projects__button:hover {
+      filter: invert(0.4); }
+    .projects__button:active {
+      background-image: linear-gradient(to top, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5)); }
 
 .presentation {
   height: 705px;
