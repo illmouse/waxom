@@ -31,10 +31,14 @@ a {
   margin: 0 auto; }
 
 .header {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-between;
   height: 1024px;
   background-image: linear-gradient(to top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../img/bg_header_mountains.jpg);
   background-repeat: no-repeat, no-repeat;
-  padding-top: 40px; }
+  padding: 40px 150px 40px 150px; }
   .header-top-logo-wrapper {
     display: flex;
     flex-direction: row;
@@ -87,6 +91,17 @@ a {
           transition: all 0.3s ease; }
           .header-top .navbar .navbar-ico .navbar__icon:hover {
             filter: invert(0.5) sepia(100%); }
+  .header .carousel {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-content: center; }
+  .header .page-buttons {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center; }
 
 .sections {
   height: 373px;

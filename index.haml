@@ -11,7 +11,7 @@
 		.wrapper-main
 			.header
 				.header-top
-					.header-top-logo-wrapper
+					%a.header-top-logo-wrapper{:href => "#"}
 						%img.header__logo{:src => "img/logo_waxom.png", :alt => "Waxom-logo"}
 						.header__name Waxom
 					.navbar
@@ -26,6 +26,14 @@
 							%a{:href => "#"}
 								%img.navbar__icon{:src => "img/ico_header_search.png", :alt => "Search"}
 				.carousel
+					.carousel__arrow.carousel__arrow--left l
+					.carousel-text
+						.carousel__h2 2
+						.carousel__h1 1
+						.carousel__p
+						%button.carousel__button
+					.carousel__arrow.carousel__arrow--right r
+				.page-buttons 1 2 3
 			.sections
 				%a{:href => "#"}
 					.section.section-web
