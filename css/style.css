@@ -199,6 +199,10 @@ a {
     line-height: 23px;
     color: #fff;
     text-transform: uppercase; }
+    .purchase-now__button:hover {
+      background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.4)); }
+    .purchase-now__button:active {
+      background-image: linear-gradient(to top, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.4)); }
 
 .projects {
   height: 1162px;
@@ -237,7 +241,11 @@ a {
     font-weight: 300;
     font-size: 14px;
     line-height: 21px;
-    color: #8c8c8c; }
+    color: #8c8c8c;
+    transition: background-color 0.3s ease, color 0.3s ease; }
+    .projects__section:hover {
+      background-color: #998675;
+      color: #fff; }
   .projects-preview {
     display: flex;
     flex-direction: row;
@@ -252,7 +260,8 @@ a {
       flex-wrap: nowrap;
       justify-content: flex-end;
       margin-bottom: 30px;
-      background-color: #fbfaf8; }
+      background-color: #fbfaf8;
+      transition: background-color 0.3s ease, color 0.3s ease; }
       .projects-preview .preview__block .block__bottom {
         height: 100px;
         padding: 30px 0 0 28px;
@@ -309,9 +318,9 @@ a {
     border-radius: 3px;
     transition: all 0.5s ease; }
     .projects__button:hover {
-      filter: invert(0.4); }
+      background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.4)); }
     .projects__button:active {
-      background-image: linear-gradient(to top, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5)); }
+      background-image: linear-gradient(to top, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.4)); }
 
 .presentation {
   height: 705px;
@@ -424,7 +433,8 @@ a {
       justify-content: space-between;
       width: 370px;
       height: 395px;
-      border: 1px solid #f8f8f8; }
+      border: 1px solid #f8f8f8;
+      transition: background-color 0.3s ease, color 0.3s ease; }
       .recent-posts-preview .recent-posts-block-date {
         width: 50px;
         margin: 20px 0 0 20px;

@@ -227,6 +227,10 @@ a
 		+fnt-raleway(700, 14px, 23px)
 		color: #fff
 		text-transform: uppercase
+		&:hover
+			background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.4))
+		&:active
+			background-image: linear-gradient(to top, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.4))
 .projects
 	height: 1162px
 	padding-top: 81px 
@@ -257,6 +261,10 @@ a
 		text-align: center
 		+fnt-montseratt(300, 14px, 21px)
 		color: #8c8c8c
+		transition: background-color .3s ease, color .3s ease
+		&:hover
+			background-color: #998675
+			color: #fff
 	&-preview
 		display: flex
 		flex-direction: row
@@ -272,6 +280,7 @@ a
 			justify-content: flex-end
 			margin-bottom: 30px
 			background-color: #fbfaf8
+			transition: background-color .3s ease, color .3s ease
 			.block__bottom
 				height: 100px
 				padding: 30px 0 0 28px
@@ -319,10 +328,9 @@ a
 		border-radius: 3px
 		transition: all .5s ease
 		&:hover
-			filter: invert(0.4)
-			// background-image: linear-gradient(to top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.2))
+			background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.4))
 		&:active
-			background-image: linear-gradient(to top, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5))
+			background-image: linear-gradient(to top, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.4))
 
 .presentation
 	height: 705px
@@ -412,6 +420,7 @@ a
 			width: 370px
 			height: 395px
 			border: 1px solid #f8f8f8
+			transition: background-color .3s ease, color .3s ease
 			&-date
 				width: 50px
 				margin: 20px 0 0 20px
