@@ -395,7 +395,50 @@ a {
 
 .presentation {
   height: 705px;
-  background-image: url(../img/bg_video_thumb.jpg); }
+  background-image: linear-gradient(to top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../img/bg_video_thumb.jpg);
+  background-repeat: no-repeat, no-repeat;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  text-align: center; }
+  .presentation-wrapper {
+    width: 589px;
+    color: #fff; }
+  .presentation__playbtn {
+    display: block;
+    width: 100px;
+    height: 100px;
+    margin: 0 auto;
+    background: url(../img/ico_present_btn.png), rgba(0, 0, 0, 0.2);
+    background-repeat: no-repeat, no-repeat;
+    background-position: 50% 50%;
+    border-radius: 50%;
+    transition: transform 0.5s ease-in;
+    margin-bottom: 40px; }
+    .presentation__playbtn:hover {
+      transform: rotate(-180deg); }
+  .presentation__h2 {
+    font-family: "Raleway";
+    font-weight: 500;
+    font-size: 36px;
+    line-height: normal;
+    margin-bottom: 30px; }
+  .presentation__p {
+    font-family: "Montserrat";
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 24px;
+    padding: 0 13px 0 13px;
+    margin-bottom: 40px; }
+  .presentation__time {
+    font-family: "Montserrat";
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 24px;
+    color: #c7b299; }
 
 .mobile-devices {
   height: 695px;
@@ -633,7 +676,8 @@ a {
 
 .clients {
   height: 489px;
-  background-image: url(../img/bg_clients_mountain.png);
+  background-image: linear-gradient(to top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../img/bg_clients_mountain.png);
+  background-repeat: no-repeat, no-repeat;
   padding-top: 140px; }
   .clients-wrapper {
     width: 1110px;

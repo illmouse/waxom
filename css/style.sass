@@ -391,7 +391,41 @@ a
 
 .presentation
 	height: 705px
-	background-image: $bg-presentation
+	background-image: linear-gradient(to top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), $bg-presentation
+	background-repeat: no-repeat, no-repeat
+	display: flex
+	flex-direction: row
+	flex-wrap: nowrap
+	justify-content: center
+	align-content: center
+	align-items: center
+	text-align: center
+	&-wrapper
+		width: 589px
+		color: #fff	
+	&__playbtn
+		display: block
+		width: 100px
+		height: 100px
+		margin: 0 auto
+		background: url(../img/ico_present_btn.png), rgba(0,0,0,0.2)
+		background-repeat: no-repeat, no-repeat
+		background-position: 50% 50%
+		border-radius: 50%
+		transition: transform .5s ease-in
+		margin-bottom: 40px
+		&:hover
+			transform: rotate(-180deg)
+	&__h2
+		+fnt-raleway(500, 36px, normal)
+		margin-bottom: 30px
+	&__p
+		+fnt-montseratt(300, 16px, 24px)
+		padding: 0 13px 0 13px
+		margin-bottom: 40px
+	&__time
+		+fnt-montseratt(400, 14px, 24px)
+		color: #c7b299
 .mobile-devices
 	height: 695px
 	background-color: $clr-bg-mobile-devices
@@ -589,7 +623,8 @@ a
 				left: 26%
 .clients
 	height: 489px
-	background-image: $bg-clients
+	background-image: linear-gradient(to top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), $bg-clients
+	background-repeat: no-repeat, no-repeat
 	padding-top: 140px
 	&-wrapper
 		width: 1110px
