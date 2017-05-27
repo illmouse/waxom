@@ -39,7 +39,7 @@ gulp.task('scripts', function() {
         .pipe(gulp.dest('app/js'));
 });
 
-gulp.task('watch', ['browserSync', 'sass'], function() {
+gulp.task('watch', ['browserSync', 'sass', 'haml'], function() {
 	gulp.watch('app/sass/*.sass', ['sass']);
 	gulp.watch('app/haml/*.haml', ['haml']);
 	gulp.watch('app/*.html', browserSync.reload);
