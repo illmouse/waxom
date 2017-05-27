@@ -77,7 +77,8 @@ $bg-footer-bg-section-widget--4: url(../img/img_widget_icons.jpg)
 // Styles
 *
 	box-sizing: border-box
-
+body
+	margin: 0
 p, h1, h2, h3
 	margin: 0
 a
@@ -409,17 +410,37 @@ a
 		color: #8c8c8c
 		margin-bottom: 40px
 	&__list
-		list-style-image: url(../img/ico_list_bullet.png)
-		list-style-position: outside
 		padding-left: 80px
 		margin: 0
 	&__item
+		position: relative
 		background-repeat: no-repeat
 		background-position: center left
 		+fnt-montseratt(300, 16px, 32px)
 		color: #8c8c8c
 		padding-left: 29px
 		vertical-align: top
+	&__bullet
+		display: inline-block
+		position: absolute
+		left: -30px
+		top: 3px
+		width: 22px
+		height: 22px
+		border-radius: 50%
+		margin-left: 8px
+		background-color: #c7b299
+		&::after
+			position: absolute
+			display: block
+			content: ''
+			width: 6px
+			height: 6px
+			border-left: 2px solid #fff
+			border-bottom: 2px solid #fff
+			top: 30%
+			left: 26%
+			transform: rotate(-135deg)
 .counters
 	height: 300px
 	background-image: $bg-counters
@@ -487,11 +508,13 @@ a
 					background-color: #363636
 					+fnt-montseratt(300, 24px, 35px)
 					border-radius: 3px 3px 0 0
+					transition: background-color .3s ease, color .3s ease
 				&__month
 					height: 25px
 					background-color: #252525
 					+fnt-roboto(400, 12px, 25px)
 					border-radius: 0 0 3px 3px
+					transition: background-color .3s ease, color .3s ease
 			&-bottom
 				height: 175px
 				padding: 30px 0 0 29px
@@ -524,6 +547,10 @@ a
 					color: #c7b299
 				.recent-posts-block-bottom__text
 					color: #fff
+				.recent-posts-block-date__date
+					background-color: #c7b299
+				.recent-posts-block-date__month
+					background-color: #a48d72
 			&--1
 				background-image: $bg-recent-posts-block--1
 				background-repeat: no-repeat			
@@ -647,6 +674,7 @@ a
 						height: 98px
 						margin-bottom: 10px
 						background-repeat: no-repeat
+						transition: transform .3s ease
 						&--1
 							background-image: $bg-footer-bg-section-widget--1						
 						&--2
@@ -655,6 +683,8 @@ a
 							background-image: $bg-footer-bg-section-widget--3						
 						&--4
 							background-image: $bg-footer-bg-section-widget--4
+						&:hover
+							transform: scale(1.1)
 	.footer-sm
 		height: 111px
 		background-color: $clr-bg-footer-sm

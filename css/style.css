@@ -18,6 +18,9 @@
 * {
   box-sizing: border-box; }
 
+body {
+  margin: 0; }
+
 p, h1, h2, h3 {
   margin: 0; }
 
@@ -418,11 +421,10 @@ a {
     color: #8c8c8c;
     margin-bottom: 40px; }
   .mobile-devices__list {
-    list-style-image: url(../img/ico_list_bullet.png);
-    list-style-position: outside;
     padding-left: 80px;
     margin: 0; }
   .mobile-devices__item {
+    position: relative;
     background-repeat: no-repeat;
     background-position: center left;
     font-family: "Montserrat";
@@ -432,6 +434,27 @@ a {
     color: #8c8c8c;
     padding-left: 29px;
     vertical-align: top; }
+  .mobile-devices__bullet {
+    display: inline-block;
+    position: absolute;
+    left: -30px;
+    top: 3px;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    margin-left: 8px;
+    background-color: #c7b299; }
+    .mobile-devices__bullet::after {
+      position: absolute;
+      display: block;
+      content: "";
+      width: 6px;
+      height: 6px;
+      border-left: 2px solid #fff;
+      border-bottom: 2px solid #fff;
+      top: 30%;
+      left: 26%;
+      transform: rotate(-135deg); }
 
 .counters {
   height: 300px;
@@ -515,7 +538,8 @@ a {
           font-weight: 300;
           font-size: 24px;
           line-height: 35px;
-          border-radius: 3px 3px 0 0; }
+          border-radius: 3px 3px 0 0;
+          transition: background-color 0.3s ease, color 0.3s ease; }
         .recent-posts-preview .recent-posts-block-date__month {
           height: 25px;
           background-color: #252525;
@@ -523,7 +547,8 @@ a {
           font-weight: 400;
           font-size: 12px;
           line-height: 25px;
-          border-radius: 0 0 3px 3px; }
+          border-radius: 0 0 3px 3px;
+          transition: background-color 0.3s ease, color 0.3s ease; }
       .recent-posts-preview .recent-posts-block-bottom {
         height: 175px;
         padding: 30px 0 0 29px;
@@ -565,6 +590,10 @@ a {
           color: #c7b299; }
         .recent-posts-preview .recent-posts-block:hover .recent-posts-block-bottom__text {
           color: #fff; }
+        .recent-posts-preview .recent-posts-block:hover .recent-posts-block-date__date {
+          background-color: #c7b299; }
+        .recent-posts-preview .recent-posts-block:hover .recent-posts-block-date__month {
+          background-color: #a48d72; }
       .recent-posts-preview .recent-posts-block--1 {
         background-image: url(../img/img_post_feet.jpg);
         background-repeat: no-repeat; }
@@ -703,7 +732,8 @@ a {
             width: 130px;
             height: 98px;
             margin-bottom: 10px;
-            background-repeat: no-repeat; }
+            background-repeat: no-repeat;
+            transition: transform 0.3s ease; }
             .footer .footer-bg-wrapper .footer-bg-section-widgets .footer-bg-section-widget--1 {
               background-image: url(../img/img_widget_phone.jpg); }
             .footer .footer-bg-wrapper .footer-bg-section-widgets .footer-bg-section-widget--2 {
@@ -712,6 +742,8 @@ a {
               background-image: url(../img/img_widget_book.jpg); }
             .footer .footer-bg-wrapper .footer-bg-section-widgets .footer-bg-section-widget--4 {
               background-image: url(../img/img_widget_icons.jpg); }
+            .footer .footer-bg-wrapper .footer-bg-section-widgets .footer-bg-section-widget:hover {
+              transform: scale(1.1); }
   .footer .footer-sm {
     height: 111px;
     background-color: #111111;

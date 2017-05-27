@@ -4,18 +4,18 @@
 		%meta{:charset => "UTF-8"}
 		%meta{:name => "viewport", :content => "width=device-width, initial-scale=1.0"}
 		%title Waxom - About Us
-		%link{:rel => "stylesheet", :href => "css/style.css"}
 		%link{:rel => "stylesheet", :href => "css/normalize.css"}
+		%link{:rel => "stylesheet", :href => "css/style.css"}
 
 		- @menu = ['Home', 'About Us', 'Portfolio', 'Features', 'Blog', 'Pricing', 'Shortcodes', 'Contact']
 	%body
 		.wrapper-main
-			.header
+			%header.header
 				.header-top
 					%a.header-top-logo-wrapper{:href => "#"}
 						%img.header__logo{:src => "img/logo_waxom.png", :alt => "Waxom-logo"}
 						.header__name Waxom
-					.navbar
+					%nav.navbar
 						.navbar-menu
 							-@menu.each do |value|
 								%div{:class => "navbar-menu__item"}
@@ -26,18 +26,18 @@
 								%img.navbar__icon{:src => "img/ico_header_cart.png", :alt => "Cart"}
 							%a{:href => "#"}
 								%img.navbar__icon{:src => "img/ico_header_search.png", :alt => "Search"}
-				.carousel
+				%aside.carousel
 					.carousel__arrow.carousel__arrow--left
 					.carousel-text
-						.carousel__h2 Unique and Modern Design
-						.carousel__h1 Portfolio PSD Template
+						%h2.carousel__h2 Unique and Modern Design
+						%h1.carousel__h1 Portfolio PSD Template
 						.carousel__p Nam liber tempor cum soluta nobis eleifend option congue nihil imper&shy;diet doming id quod mazim placerat facer possim assum.
 						%button.carousel__button Get Started
 					.carousel__arrow.carousel__arrow--right
 				.page-buttons 1 2 3
-			.sections
+			%section.sections
 				%a{:href => "#"}
-					.section.section-web
+					%section.section.section-web
 						-# %img.section__icon.section__icon--web{:src => "img/ico_web.svg", :alt => "Waxom Web"}
 						%svg.section__icon.section__icon--custom{:xmlns => "http://www.w3.org/2000/svg", :width => "49", :height => "49", :viewBox => "0 0 49 49"}
 							%path{:d => "M47.67 17.47a1.6 1.6 0 0 0-2.25 0L31.57 31.31l-19.46 8.58-3-3 8.57-19.47L31.53 3.58a1.6 1.6 0 0 0-2.25-2.25L15 15.59.53 48.46 33.4 33.99l14.27-14.27a1.6 1.6 0 0 0 0-2.25zm-20.17 11c.3.3.71.46 1.12.46.4 0 .81-.16 1.13-.46l13.33-13.34a1.59 1.59 0 1 0-2.25-2.25L27.5 26.22a1.6 1.6 0 0 0 0 2.25zM24 24.99a1.62 1.62 0 0 0 2.25 0L39.6 11.65a1.6 1.6 0 0 0-2.25-2.25L24 22.73a1.6 1.6 0 0 0 0 2.26zm-3.48-3.49a1.6 1.6 0 0 0 2.25 0L36.12 8.17a1.59 1.59 0 1 0-2.25-2.25L20.53 19.25a1.6 1.6 0 0 0 0 2.25z"}
@@ -46,7 +46,7 @@
 						%p.section__text Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim.
 						.section__marker
 				%a{:href => "#"}
-					.section.section-dev
+					%section.section.section-dev
 						-# %img.section__icon.section__icon--dev{:src => "img/ico_dev.svg", :alt => "Waxom Development"}
 						%svg.section__icon.section__icon--dev{:xmlns => "http://www.w3.org/2000/svg", :width => "129", :height => "118", :viewBox => "0 0 129 118"} 
 							%path{:d => "M64.55.33L.25 35.01l64.3 34.68 64.31-34.68zm0 80.55L12.2 52.65.24 59.1l64.31 34.65 64.31-34.65-11.95-6.45zm0 24.06L12.2 76.71.24 83.16l64.31 34.68 64.31-34.68-11.95-6.45z"}
@@ -55,7 +55,7 @@
 						%p.section__text Lorem ipsum dolor sit amet, adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet.
 						.section__marker
 				%a{:href => "#"}
-					.section.section-custom
+					%section.section.section-custom
 						-# %img.section__icon.section__icon--custom{:src => "img/ico_customization.svg", :alt => "Waxom Customization"}
 						%svg.section__icon.section__icon--custom{:xmlns => "http://www.w3.org/2000/svg", :width => "44", :height => "44", :viewBox => "0 0 44 44"}
 							%path{:d => "M43.93 21.85a4.33 4.33 0 0 0-2.61-3.86c-1.44-.51-2.83-1.75-3.24-2.74-.4-.98-.3-2.85.36-4.23a4.37 4.37 0 0 0-.89-4.58 4.32 4.32 0 0 0-4.57-.88c-1.38.65-3.25.76-4.23.35-.99-.4-2.23-1.8-2.74-3.24a4.34 4.34 0 0 0-3.87-2.6 4.32 4.32 0 0 0-3.86 2.6c-.51 1.44-1.76 2.84-2.74 3.24-.98.41-2.85.3-4.23-.35a4.32 4.32 0 0 0-4.57.88 4.33 4.33 0 0 0-.89 4.58c.66 1.38.76 3.25.35 4.23-.4.98-1.79 2.23-3.23 2.74a4.33 4.33 0 0 0-2.61 3.86 4.33 4.33 0 0 0 2.61 3.86c1.44.51 2.83 1.76 3.24 2.74.4.98.3 2.85-.36 4.23a4.33 4.33 0 0 0 .89 4.58 4.32 4.32 0 0 0 4.57.88c1.38-.65 3.25-.76 4.23-.35.98.41 2.23 1.8 2.74 3.24a4.32 4.32 0 0 0 3.86 2.6 4.34 4.34 0 0 0 3.87-2.6c.51-1.44 1.75-2.83 2.73-3.24.99-.41 2.86-.3 4.24.35 1.38.66 3.42.26 4.57-.88a4.37 4.37 0 0 0 .89-4.58c-.66-1.38-.77-3.25-.36-4.23.4-.98 1.8-2.23 3.24-2.74a4.33 4.33 0 0 0 2.61-3.86zm-21.79 7.99a7.98 7.98 0 1 1 0-15.97 7.99 7.99 0 1 1 0 15.97z"}
@@ -64,7 +64,7 @@
 						%p.section__text Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim.
 						.section__marker
 				%a{:href => "#"}
-					.section.section-marketing
+					%section.section.section-marketing
 						-# %img.section__icon.section__icon--marketing{:src => "img/ico_marketing.svg", :alt => "Waxom Marketing"}
 						%svg.section__icon.section__icon--custom{:xmlns => "http://www.w3.org/2000/svg", :width => "52", :height => "36", :viewBox => "0 0 52 36"}
 							%path{:d => "M9 13.25a6.79 6.79 0 0 1 5.74-3.61h26.21V7.98a2.48 2.48 0 0 0-2.46-2.48H27.67V4.06A3.7 3.7 0 0 0 23.99.33H17.7c-.98 0-1.91.39-2.61 1.1-.7.7-1.08 1.63-1.08 2.63V5.5H3.2A2.48 2.48 0 0 0 .74 7.98v22.17zm7.47-9.19c0-.33.13-.64.36-.88.23-.24.54-.36.87-.36h6.29c.68 0 1.23.55 1.23 1.24V5.5h-8.75zm34.94 10.28c.6-1.22-.02-2.22-1.37-2.22h-35.3c-1.35 0-2.94 1-3.54 2.22L1.71 33.76c-.6 1.22.02 2.22 1.37 2.22h35.3c1.35 0 2.95-1 3.54-2.22z"}
@@ -72,18 +72,18 @@
 						%h3.section__header Marketing
 						%p.section__text Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim.
 						.section__marker
-			.browser-preview
+			%section.browser-preview
 				.browser-preview-wrapper
 					%h2.browser-preview__header Waxom is Realization of your Ideas.
 					%p.browser-preview__text Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius. Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium.
-			.purchase-now
+			%section.purchase-now
 				.purchase-now-wrapper
 					%h2.purchase-now__header
 						%span.letterhead Waxom
 						Multipurpose WordPress Theme
 					%p.purchase-now__text Don't Forget to Rate the Template. Thanks so much!
 				%button.purchase-now__button Purchase Now
-			.projects
+			%section.projects
 				.projects-wrapper
 					%h2.projects__header Our Latest Projects.
 					%p.projects__text Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius. Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium.
@@ -94,42 +94,56 @@
 						%a.projects__section.projects__section--illustration{:href => "#"} Illustration
 						%a.projects__section.projects__section--photo{:href => "#"} Photography
 					.projects-preview
-						%a.preview__block.preview__block--1{:href => "#"}
-							.block__bottom
-								%h3.block__header Claritas Etiam Processus
-								.block__text Photography, Nature
-						%a.preview__block.preview__block--2{:href => "#"}
-							.block__bottom
-								%h3.block__header Quam Nutamus Farum
-								.block__text Graphic Design, Mock-Up
-						%a.preview__block.preview__block--3{:href => "#"}
-							.block__bottom
-								%h3.block__header Usus Legentis Videntur
-								.block__text Photography, Holiday
-						%a.preview__block.preview__block--4{:href => "#"}
-							.block__bottom
-								%h3.block__header Claritas Etiam Processus
-								.block__text Photography, Nature
-						%a.preview__block.preview__block--5{:href => "#"}
-							.block__bottom
-								%h3.block__header Quam Nutamus Farum
-								.block__text Graphic Design, Mock-Up
-						%a.preview__block.preview__block--6{:href => "#"}
-							.block__bottom
-								%h3.block__header Usus Legentis Videntur
-								.block__text Photography, Holiday
+						%a{:href => "#"}
+							%article.preview__block.preview__block--1
+								.block__bottom
+									%h3.block__header Claritas Etiam Processus
+									.block__text Photography, Nature
+						%a{:href => "#"}
+							%article.preview__block.preview__block--2
+								.block__bottom
+									%h3.block__header Quam Nutamus Farum
+									.block__text Graphic Design, Mock-Up
+						%a{:href => "#"}
+							%article.preview__block.preview__block--3
+								.block__bottom
+									%h3.block__header Usus Legentis Videntur
+									.block__text Photography, Holiday
+						%a{:href => "#"}
+							%article.preview__block.preview__block--4
+								.block__bottom
+									%h3.block__header Claritas Etiam Processus
+									.block__text Photography, Nature
+						%a{:href => "#"}
+							%article.preview__block.preview__block--5
+								.block__bottom
+									%h3.block__header Quam Nutamus Farum
+									.block__text Graphic Design, Mock-Up
+						%a{:href => "#"}
+							%article.preview__block.preview__block--6
+								.block__bottom
+									%h3.block__header Usus Legentis Videntur
+									.block__text Photography, Holiday
 					%button.projects__button Load More
-			.presentation
-			.mobile-devices
+			%aside.presentation
+			%article.mobile-devices
 				.mobile-devices-wrapper
 					%h2.mobile-devices__header Excellent for Mobile Devices.
 					%p.mobile-devices__text Qisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius claritas. Eodem modo typi, qui nunc nobis videntur parum clari, fiant sollemnes in futurum.
-					%ul.mobile-devices__list
-						%li.mobile-devices__item Nam liber tempor cum soluta nobis eleifend option;
-						%li.mobile-devices__item Option congue nihil imperdiet doming id quod mazim placerat facer;
-						%li.mobile-devices__item Eodem modo typi, qui nunc nobis videntur parum futurum;
-						%li.mobile-devices__item Investigationes demonstraverunt lectores
-			.counters
+					.mobile-devices__list
+						.mobile-devices__item
+							.mobile-devices__bullet
+							Nam liber tempor cum soluta nobis eleifend option;
+						.mobile-devices__item
+							.mobile-devices__bullet
+							Option congue nihil imperdiet doming id quod mazim placerat facer;
+						.mobile-devices__item
+							.mobile-devices__bullet
+							Eodem modo typi, qui nunc nobis videntur parum futurum;
+						.mobile-devices__item
+							.mobile-devices__bullet
+							Investigationes demonstraverunt lectores
+			%aside.counters
 				.counters-wrapper
 					.counters-block
 						%img.counters__icon{:src => "img/ico_count_clients.svg", :alt => "Waxom clients"}
@@ -156,36 +170,39 @@
 						.counters__number 900
 						.counters__text We launched
 						.counters_marker
-			.recent-posts
+			%section.recent-posts
 				.recent-posts-wrapper
 					%h2.recent-posts__header Recent Posts.
 					%p.recent-posts__text Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius. Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium.
 					.recent-posts-preview
-						%a.recent-posts-block.recent-posts-block--1{:href => "#"}
-							.recent-posts-block-date
-								.recent-posts-block-date__date 30
-								.recent-posts-block-date__month Sep.
-							.recent-posts-block-bottom
-								%h3.recent-posts-block-bottom__header Lorem ipsum dolor sit amet
-								%p.recent-posts-block-bottom__text Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium.
-								.recent-posts-block-bottom__link Read More
-						%a.recent-posts-block.recent-posts-block--2{:href => "#"}
-							.recent-posts-block-date
-								.recent-posts-block-date__date 30
-								.recent-posts-block-date__month Sep.
-							.recent-posts-block-bottom
-								%h3.recent-posts-block-bottom__header Lorem ipsum dolor sit amet
-								%p.recent-posts-block-bottom__text Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium.
-								.recent-posts-block-bottom__link Read More
-						%a.recent-posts-block.recent-posts-block--3{:href => "#"}
-							.recent-posts-block-date
-								.recent-posts-block-date__date 30
-								.recent-posts-block-date__month Sep.
-							.recent-posts-block-bottom
-								%h3.recent-posts-block-bottom__header Lorem ipsum dolor sit amet
-								%p.recent-posts-block-bottom__text Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium.
-								.recent-posts-block-bottom__link Read More
-					.recent-posts-slider
+						%a{:href => "#"}
+							%article.recent-posts-block.recent-posts-block--1
+								.recent-posts-block-date
+									.recent-posts-block-date__date 30
+									.recent-posts-block-date__month Sep.
+								.recent-posts-block-bottom
+									%h3.recent-posts-block-bottom__header Lorem ipsum dolor sit amet
+									%p.recent-posts-block-bottom__text Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium.
+									.recent-posts-block-bottom__link Read More
+						%a{:href => "#"}
+							%article.recent-posts-block.recent-posts-block--2
+								.recent-posts-block-date
+									.recent-posts-block-date__date 30
+									.recent-posts-block-date__month Sep.
+								.recent-posts-block-bottom
+									%h3.recent-posts-block-bottom__header Lorem ipsum dolor sit amet
+									%p.recent-posts-block-bottom__text Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium.
+									.recent-posts-block-bottom__link Read More
+						%a{:href => "#"}
+							%article.recent-posts-block.recent-posts-block--3
+								.recent-posts-block-date
+									.recent-posts-block-date__date 30
+									.recent-posts-block-date__month Sep.
+								.recent-posts-block-bottom
+									%h3.recent-posts-block-bottom__header Lorem ipsum dolor sit amet
+									%p.recent-posts-block-bottom__text Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium.
+									.recent-posts-block-bottom__link Read More
+					%aside.recent-posts-slider
 						.recent-posts-slider__item.recent-posts-slider__item--left
 						.recent-posts-slider__item.recent-posts-slider__item--right	
 			.clients
@@ -194,10 +211,10 @@
 					%img.clients__logo{:src => "img/img_footer_delicious.png", :alt => "Delicious"}
 					%img.clients__logo{:src => "img/img_footer_designers.png", :alt => "Designers"}
 					%img.clients__logo{:src => "img/img_footer_royal.png", :alt => "Royal"}
-			.footer
-				.footer-bg
+			%footer.footer
+				%section.footer-bg
 					.footer-bg-wrapper
-						.footer-bg-section
+						%section.footer-bg-section
 							.footer-bg-section__header.footer-bg-section__header--logo
 								%a{:href => "#"}
 									%img.footer-bg-section__logo{:src => "img/logo_waxom.png", :alt => "Waxom Logo"}
@@ -206,7 +223,7 @@
 								%a{:href => "#"}
 									%p Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci suscipit lobortis claritatem.
 							%a.footer-bg-section__link{:href => "#"} Read More				
-						.footer-bg-section
+						%section.footer-bg-section
 							.footer-bg-section__header Recent Posts
 							.footer-bg-section__p
 								.footer-bg-section__date September 08, 2015
@@ -222,7 +239,7 @@
 								.footer-bg-section__date September 08, 2015
 								%a{:href => "#"}
 									%p Claritas est etiam processus dynamicus, qui sequitur mutationem per seacula quarta decima
-						.footer-bg-section
+						%section.footer-bg-section
 							.footer-bg-section__header Our Twitter
 							.footer-bg-section__p
 								%a{:href => "#"}
@@ -245,14 +262,14 @@
 										Soluta nobis option
 										%span.footer-bg-section__shortlink bit.ly/1Hniso7
 								.footer-bg-section__date 20 days ago			
-						.footer-bg-section
+						%section.footer-bg-section
 							.footer-bg-section__header Dribbble Widget
 							.footer-bg-section-widgets
 								%a.footer-bg-section-widget.footer-bg-section-widget--1{:href => "#"}
 								%a.footer-bg-section-widget.footer-bg-section-widget--2{:href => "#"}
 								%a.footer-bg-section-widget.footer-bg-section-widget--3{:href => "#"}
 								%a.footer-bg-section-widget.footer-bg-section-widget--4{:href => "#"}
-				.footer-sm
+				%section.footer-sm
 					.footer-sm-wrapper
 						.footer-sm-left
 							.footer-sm__p
