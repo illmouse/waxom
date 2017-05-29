@@ -15,30 +15,11 @@ html(lang='en')
             .header__name Waxom
           nav.navbar
             .navbar-menu
-              .navbar-menu__item
-                a(href='#')
-                  | Home
-              .navbar-menu__item
-                a(href='#')
-                  | About Us
-              .navbar-menu__item
-                a(href='#')
-                  | Portfolio
-              .navbar-menu__item
-                a(href='#')
-                  | Features
-              .navbar-menu__item
-                a(href='#')
-                  | Blog
-              .navbar-menu__item
-                a(href='#')
-                  | Pricing
-              .navbar-menu__item
-                a(href='#')
-                  | Shortcodes
-              .navbar-menu__item
-                a(href='#')
-                  | Contact
+              - var menu = ['Home', 'About Us', 'Portfolio', 'Features', 'Blog', 'Pricing', 'Shortcodes', 'Contact'];
+              for item in menu
+                .navbar-menu__item
+                  a(href='#')= item
+
             .navbar-ico
               a(href='#')
                 img.navbar__icon(alt='Cart', src='img/ico_header_cart.png')
