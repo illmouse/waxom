@@ -19,7 +19,6 @@ html(lang='en')
               for item in menu
                 .navbar-menu__item
                   a(href='#')= item
-
             .navbar-ico
               a(href='#')
                 img.navbar__icon(alt='Cart', src='img/ico_header_cart.png')
@@ -101,36 +100,15 @@ html(lang='en')
             a.projects__section.projects__section--illustration(href='#') Illustration
             a.projects__section.projects__section--photo(href='#') Photography
           .projects-preview
-            a(href='#')
-              article.preview__block.preview__block--1
-                .block__bottom
-                  h3.block__header Claritas Etiam Processus
-                  .block__text Photography, Nature
-            a(href='#')
-              article.preview__block.preview__block--2
-                .block__bottom
-                  h3.block__header Quam Nutamus Farum
-                  .block__text Graphic Design, Mock-Up
-            a(href='#')
-              article.preview__block.preview__block--3
-                .block__bottom
-                  h3.block__header Usus Legentis Videntur
-                  .block__text Photography, Holiday
-            a(href='#')
-              article.preview__block.preview__block--4
-                .block__bottom
-                  h3.block__header Claritas Etiam Processus
-                  .block__text Photography, Nature
-            a(href='#')
-              article.preview__block.preview__block--5
-                .block__bottom
-                  h3.block__header Quam Nutamus Farum
-                  .block__text Graphic Design, Mock-Up
-            a(href='#')
-              article.preview__block.preview__block--6
-                .block__bottom
-                  h3.block__header Usus Legentis Videntur
-                  .block__text Photography, Holiday
+            - var projectsContent = [{header:"Claritas Etiam Processus", text:"Photography, Nature"}, {header:"Quam Nutamus Farum", text:"Graphic Design, Mock-Up" }, {header:"Usus Legentis Videntur", text:"Photography, Holiday" }, {header:"Claritas Etiam Processus", text:"Photography, Nature"}, {header:"Quam Nutamus Farum", text:"Graphic Design, Mock-Up" }, {header:"Usus Legentis Videntur", text:"Photography, Holiday" }];
+            mixin projects-blocks(project)
+              a(href='#')
+                article(class= "preview__block preview__block--" + (projectsContent.indexOf(project)+1))
+                  .block__bottom
+                    h3.block__header= project.header
+                      .block__text= project.text
+            for project in projectsContent
+              +projects-blocks(project)
           button.projects__button Load More
       aside.presentation
         .presentation-wrapper
