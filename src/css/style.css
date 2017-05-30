@@ -28,7 +28,7 @@ body {
 p, h1, h2, h3 {
   margin: 0; }
 
-a {
+a, label {
   text-decoration: none;
   color: inherit; }
 
@@ -43,8 +43,6 @@ a {
   flex-wrap: wrap;
   justify-content: space-between;
   height: 1024px;
-  background-image: linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(../img/bg_header_mountains.jpg);
-  background-repeat: no-repeat, no-repeat;
   padding: 40px 150px 40px 150px; }
   .header-top-logo-wrapper {
     display: flex;
@@ -99,65 +97,6 @@ a {
           transition: all .3s ease; }
           .header-top .navbar .navbar-ico .navbar__icon:hover {
             filter: invert(0.5) sepia(100%); }
-  .header .slider {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: space-between;
-    align-content: center;
-    align-items: center;
-    text-align: center; }
-    .header .slider-text {
-      width: 589px;
-      color: #fff; }
-    .header .slider__h2 {
-      font-family: 'Raleway';
-      font-weight: 500;
-      font-size: 36px;
-      line-height: normal;
-      margin-bottom: 10px; }
-    .header .slider__h1 {
-      font-family: 'Raleway';
-      font-weight: 700;
-      font-size: 52px;
-      line-height: normal;
-      margin-bottom: 10px; }
-    .header .slider__p {
-      font-family: 'Montserrat';
-      font-weight: 300;
-      font-size: 16px;
-      line-height: 24px;
-      padding: 0 13px 0 13px;
-      word-break: break-all;
-      margin-bottom: 50px; }
-    .header .slider__button {
-      width: 170px;
-      height: 50px;
-      border: none;
-      border-radius: 3px;
-      outline: none;
-      background-color: #998675;
-      font-family: 'Raleway';
-      font-weight: 700;
-      font-size: 14px;
-      line-height: 23px;
-      color: #fff;
-      text-transform: uppercase; }
-      .header .slider__button:hover {
-        background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.4)); }
-      .header .slider__button:active {
-        background-image: linear-gradient(to top, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.4)); }
-    .header .slider__arrow {
-      width: 50px;
-      height: 50px;
-      border-left: 2px solid #c7b299;
-      border-bottom: 2px solid #c7b299; }
-      .header .slider__arrow--left {
-        transform: rotate(45deg); }
-      .header .slider__arrow--right {
-        transform: rotate(-135deg); }
-      .header .slider__arrow:hover {
-        border-color: #e4e0d7; }
   .header .slider-buttons {
     display: flex;
     flex-direction: row;
