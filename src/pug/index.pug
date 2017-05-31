@@ -45,16 +45,16 @@ html(lang='en')
                     //- button.slider__button Get Started
                 for slide in sliderContent
                   +sliders(slide)
-            #slider-controls.slider-controls
-              - var i = 1
-              - for (; i<=5; i++) {
-                  label(for="slide" + i)
-              - }            
-            #slider-active.slider-active
-              - var i = 1
-              - for (; i<=5; i++) {
-                  label(for="slide" + i)
-              - }
+          #slider-controls.slider-controls
+            - var i = 1
+            - for (; i<=5; i++) {
+                label(for="slide" + i)
+            - }            
+          #slider-active.slider-active
+            - var i = 1
+            - for (; i<=5; i++) {
+                label(for="slide" + i)
+            - }
       section.sections
         a(href='#')
           section.section.section-web
