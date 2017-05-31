@@ -1,7 +1,7 @@
 // Sizes
 $size-wrapper-main-width: 1920px
 $size-logo-waxom-width: 63px
-$size-header-top-width: 1170px
+$size-header-top-width: 100%
 //  Colors
 $clr-bg-body: #fff
 $clr-bg-browser-preview: #fbfaf8
@@ -89,14 +89,16 @@ a, label
 	background-color: $clr-bg-body
 	margin: 0 auto
 .header
-	display: flex
-	flex-direction: column
-	flex-wrap: wrap
-	justify-content: space-between
-	height: 1024px
+	// display: flex
+	// flex-direction: column
+	// flex-wrap: wrap
+	// justify-content: space-between
+	// height: 1024px
 	// background-image: linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7))
 	// background-repeat: no-repeat, no-repeat
-	padding: 40px 150px 40px 150px
+	// padding: 40px 150px 40px 150px
+	width: 100%
+	position: relative
 	&-top-logo-wrapper
 		display: flex
 		flex-direction: row
@@ -113,7 +115,9 @@ a, label
 		flex-wrap: nowrap
 		justify-content: space-between
 		width: $size-header-top-width
-		margin: 0 auto
+		margin-left: auto
+		position: absolute
+		padding: 40px 20% 0 20%
 		.navbar
 			display: flex
 			flex-direction: row
@@ -145,6 +149,55 @@ a, label
 					&:hover
 						filter: invert(0.5) sepia(100%)
 	.slider
+		#slide1:checked
+			~ #slider-slides .slider-inner
+				margin-left: 0
+		#slide2:checked
+			~ #slider-slides .slider-inner
+				margin-left: -100%
+		#slide3:checked
+			~ #slider-slides .slider-inner
+				margin-left: -200%
+		#slide4:checked
+			~ #slider-slides .slider-inner
+				margin-left: -300%
+		#slide5:checked
+			~ #slider-slides .slider-inner
+				margin-left: -400%
+		#slide1:checked ~ #slider-controls label:nth-child(2), 
+		#slide2:checked ~ #slider-controls label:nth-child(3), 
+		#slide3:checked ~ #slider-controls label:nth-child(4), 
+		#slide4:checked ~ #slider-controls label:nth-child(5), 
+		#slide5:checked ~ #slider-controls label:nth-child(1)
+			background: url('http://csscience.com/responsiveslidercss3/next.png') no-repeat
+			float: right
+			margin: 0 -70px 0 0
+			display: block
+		#slide1:checked ~ #slider-controls label:nth-child(5),
+		#slide2:checked ~ #slider-controls label:nth-child(1),
+		#slide3:checked ~ #slider-controls label:nth-child(2),
+		#slide4:checked ~ #slider-controls label:nth-child(3),
+		#slide5:checked ~ #slider-controls label:nth-child(4)
+			background: url('http://csscience.com/responsiveslidercss3/prev.png') no-repeat
+			float: left
+			margin: 0 0 0 -70px
+			display: block
+		&-overflow
+			width: 100%
+			overflow: hidden
+		&-inner
+			display: flex
+			width: 500%
+		&__input
+			display: none
+		&-controls
+			position: absolute
+			width: 100%
+			height: 50px
+			top: 45%
+			& label
+				width: 50px
+				height: 50px
 		// display: flex
 		// flex-direction: row
 		// flex-wrap: nowrap
@@ -192,24 +245,24 @@ a, label
 		// 		transform: rotate(-135deg)
 		// 	&:hover
 		// 		border-color: #e4e0d7
-	.slider-buttons
-		display: flex
-		flex-direction: row
-		flex-wrap: nowrap
-		justify-content: space-between
-		align-items: center
-		align-self: center
-		width: 100px
-		&__circle
-			width: 11px
-			height: 11px
-			background-color: #8e8e8e
-			border-radius: 50%
-			&--active
-				width: 15px
-				height: 15px
-				border: 2px solid #d0beab
-				background-color: transparent
+	// .slider-buttons
+	// 	display: flex
+	// 	flex-direction: row
+	// 	flex-wrap: nowrap
+	// 	justify-content: space-between
+	// 	align-items: center
+	// 	align-self: center
+	// 	width: 100px
+	// 	&__circle
+	// 		width: 11px
+	// 		height: 11px
+	// 		background-color: #8e8e8e
+	// 		border-radius: 50%
+	// 		&--active
+	// 			width: 15px
+	// 			height: 15px
+	// 			border: 2px solid #d0beab
+	// 			background-color: transparent
 .sections
 	height: 373px
 	padding: 0 376px

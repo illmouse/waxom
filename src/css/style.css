@@ -38,12 +38,8 @@ a, label {
   margin: 0 auto; }
 
 .header {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  height: 1024px;
-  padding: 40px 150px 40px 150px; }
+  width: 100%;
+  position: relative; }
   .header-top-logo-wrapper {
     display: flex;
     flex-direction: row;
@@ -62,8 +58,10 @@ a, label {
     flex-direction: row;
     flex-wrap: nowrap;
     justify-content: space-between;
-    width: 1170px;
-    margin: 0 auto; }
+    width: 100%;
+    margin-left: auto;
+    position: absolute;
+    padding: 40px 20% 0 20%; }
     .header-top .navbar {
       display: flex;
       flex-direction: row;
@@ -97,24 +95,50 @@ a, label {
           transition: all .3s ease; }
           .header-top .navbar .navbar-ico .navbar__icon:hover {
             filter: invert(0.5) sepia(100%); }
-  .header .slider-buttons {
+  .header .slider #slide1:checked ~ #slider-slides .slider-inner {
+    margin-left: 0; }
+  .header .slider #slide2:checked ~ #slider-slides .slider-inner {
+    margin-left: -100%; }
+  .header .slider #slide3:checked ~ #slider-slides .slider-inner {
+    margin-left: -200%; }
+  .header .slider #slide4:checked ~ #slider-slides .slider-inner {
+    margin-left: -300%; }
+  .header .slider #slide5:checked ~ #slider-slides .slider-inner {
+    margin-left: -400%; }
+  .header .slider #slide1:checked ~ #slider-controls label:nth-child(2),
+  .header .slider #slide2:checked ~ #slider-controls label:nth-child(3),
+  .header .slider #slide3:checked ~ #slider-controls label:nth-child(4),
+  .header .slider #slide4:checked ~ #slider-controls label:nth-child(5),
+  .header .slider #slide5:checked ~ #slider-controls label:nth-child(1) {
+    background: url("http://csscience.com/responsiveslidercss3/next.png") no-repeat;
+    float: right;
+    margin: 0 -70px 0 0;
+    display: block; }
+  .header .slider #slide1:checked ~ #slider-controls label:nth-child(5),
+  .header .slider #slide2:checked ~ #slider-controls label:nth-child(1),
+  .header .slider #slide3:checked ~ #slider-controls label:nth-child(2),
+  .header .slider #slide4:checked ~ #slider-controls label:nth-child(3),
+  .header .slider #slide5:checked ~ #slider-controls label:nth-child(4) {
+    background: url("http://csscience.com/responsiveslidercss3/prev.png") no-repeat;
+    float: left;
+    margin: 0 0 0 -70px;
+    display: block; }
+  .header .slider-overflow {
+    width: 100%;
+    overflow: hidden; }
+  .header .slider-inner {
     display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: space-between;
-    align-items: center;
-    align-self: center;
-    width: 100px; }
-    .header .slider-buttons__circle {
-      width: 11px;
-      height: 11px;
-      background-color: #8e8e8e;
-      border-radius: 50%; }
-      .header .slider-buttons__circle--active {
-        width: 15px;
-        height: 15px;
-        border: 2px solid #d0beab;
-        background-color: transparent; }
+    width: 500%; }
+  .header .slider__input {
+    display: none; }
+  .header .slider-controls {
+    position: absolute;
+    width: 100%;
+    height: 50px;
+    top: 45%; }
+    .header .slider-controls label {
+      width: 50px;
+      height: 50px; }
 
 .sections {
   height: 373px;
