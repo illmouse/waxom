@@ -35,14 +35,16 @@ html(lang='en')
           #slider-slides.slider-slides
             #slider-overflow.slider-overflow
               .slider-inner
-                - var sliderContent = [{h2: "Unique and Modern Design", h1: "Portfolio PSD Template", p: "Nam liber tempor cum soluta nobis eleifend option congue nihil imper­diet doming id quod mazim placerat facer possim assum.", img: "../img/bg_header_mountains.jpg", alt: "Mountains"}, {h2: "Unique and Modern Design", h1: "Portfolio PSD Template", p: "Nam liber tempor cum soluta nobis eleifend option congue nihil imper­diet doming id quod mazim placerat facer possim assum.", img: "../img/bg_header_city.jpg", alt: "City"}, {h2: "Unique and Modern Design", h1: "Portfolio PSD Template", p: "Nam liber tempor cum soluta nobis eleifend option congue nihil imper­diet doming id quod mazim placerat facer possim assum.", img: "../img/bg_header_lake.jpg", alt: "Lake"}, {h2: "Unique and Modern Design", h1: "Portfolio PSD Template", p: "Nam liber tempor cum soluta nobis eleifend option congue nihil imper­diet doming id quod mazim placerat facer possim assum.", img: "../img/bg_header_stars.jpg", alt: "Stars"}, {h2: "Unique and Modern Design", h1: "Portfolio PSD Template", p: "Nam liber tempor cum soluta nobis eleifend option congue nihil imper­diet doming id quod mazim placerat facer possim assum.", img: "../img/bg_header_cosmos.jpg", alt: "Cosmos"}];
+                - var sliderContent = [{h2: "Unique and Modern Design", h1: "Portfolio PSD Template", p: "Nam liber tempor cum soluta nobis eleifend option congue nihil imper­diet doming id quod mazim placerat facer possim assum.", img: "img/bg_header_mountains.jpg", alt: "Mountains"}, {h2: "Unique and Modern Design", h1: "Portfolio PSD Template 2", p: "Nam liber tempor cum soluta nobis eleifend option congue nihil imper­diet doming id quod mazim placerat facer possim assum.", img: "img/bg_header_city.jpg", alt: "City"}, {h2: "Unique and Modern Design", h1: "Portfolio PSD Template 3", p: "Nam liber tempor cum soluta nobis eleifend option congue nihil imper­diet doming id quod mazim placerat facer possim assum.", img: "img/bg_header_lake.jpg", alt: "Lake"}, {h2: "Unique and Modern Design", h1: "Portfolio PSD Template 4", p: "Nam liber tempor cum soluta nobis eleifend option congue nihil imper­diet doming id quod mazim placerat facer possim assum.", img: "img/bg_header_stars.jpg", alt: "Stars"}, {h2: "Unique and Modern Design", h1: "Portfolio PSD Template 5", p: "Nam liber tempor cum soluta nobis eleifend option congue nihil imper­diet doming id quod mazim placerat facer possim assum.", img: "img/bg_header_cosmos.jpg", alt: "Cosmos"}];
                 mixin sliders(slide)
                   article.slider__slide
-                    //- h2.slider__h2= slide.h2
-                    //- h1.slider__h1= slide.h1
-                    //- .slider__p= slide.p
-                    img(src= slide.img, alt= slide.alt)
-                    //- button.slider__button Get Started
+                    img(src= slide.img, alt= slide.alt, class= "slider__image")
+                    .slider__gradient
+                    .slider-text-wrapper
+                      h2.slider__h2= slide.h2
+                      h1.slider__h1= slide.h1
+                      .slider__p= slide.p
+                      button.slider__button Get Started
                 for slide in sliderContent
                   +sliders(slide)
           #slider-controls.slider-controls
