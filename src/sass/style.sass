@@ -1,7 +1,7 @@
 // Sizes
 $size-wrapper-main-width: 1920px
 $size-logo-waxom-width: 63px
-$size-header-top-width: 1170px
+$size-header-top-width: 100%
 //  Colors
 $clr-bg-body: #fff
 $clr-bg-browser-preview: #fbfaf8
@@ -81,7 +81,7 @@ body
 	margin: 0
 p, h1, h2, h3
 	margin: 0
-a
+a, label
 	text-decoration: none
 	color: inherit
 .wrapper-main
@@ -89,14 +89,16 @@ a
 	background-color: $clr-bg-body
 	margin: 0 auto
 .header
-	display: flex
-	flex-direction: column
-	flex-wrap: wrap
-	justify-content: space-between
-	height: 1024px
-	background-image: linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), $bg-header
-	background-repeat: no-repeat, no-repeat
-	padding: 40px 150px 40px 150px
+	// display: flex
+	// flex-direction: column
+	// flex-wrap: wrap
+	// justify-content: space-between
+	// height: 1024px
+	// background-image: linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7))
+	// background-repeat: no-repeat, no-repeat
+	// padding: 40px 150px 40px 150px
+	width: 100%
+	position: relative
 	&-top-logo-wrapper
 		display: flex
 		flex-direction: row
@@ -113,7 +115,10 @@ a
 		flex-wrap: nowrap
 		justify-content: space-between
 		width: $size-header-top-width
-		margin: 0 auto
+		margin-left: auto
+		position: absolute
+		padding: 40px 20% 0 20%
+		z-index: 2
 		.navbar
 			display: flex
 			flex-direction: row
@@ -145,70 +150,160 @@ a
 					&:hover
 						filter: invert(0.5) sepia(100%)
 	.slider
-		display: flex
-		flex-direction: row
-		flex-wrap: nowrap
-		justify-content: space-between
-		align-content: center
-		align-items: center
-		text-align: center
-		&-text
+		&__slide
+			position: relative
+			height: 1024px
+		#slide1:checked
+			~ #slider-slides .slider-inner
+				margin-left: 0
+		#slide2:checked
+			~ #slider-slides .slider-inner
+				margin-left: -100%
+		#slide3:checked
+			~ #slider-slides .slider-inner
+				margin-left: -200%
+		#slide4:checked
+			~ #slider-slides .slider-inner
+				margin-left: -300%
+		#slide5:checked
+			~ #slider-slides .slider-inner
+				margin-left: -400%
+		#slide1:checked ~ #slider-controls label:nth-child(2), 
+		#slide2:checked ~ #slider-controls label:nth-child(3), 
+		#slide3:checked ~ #slider-controls label:nth-child(4), 
+		#slide4:checked ~ #slider-controls label:nth-child(5), 
+		#slide5:checked ~ #slider-controls label:nth-child(1)
+			background: url('../img/chevron-thin-right.svg') no-repeat
+			float: right
+			margin: 0 100px 0 0
+			display: block
+		#slide1:checked ~ #slider-controls label:nth-child(5),
+		#slide2:checked ~ #slider-controls label:nth-child(1),
+		#slide3:checked ~ #slider-controls label:nth-child(2),
+		#slide4:checked ~ #slider-controls label:nth-child(3),
+		#slide5:checked ~ #slider-controls label:nth-child(4)
+			background: url('../img/chevron-thin-left.svg') no-repeat
+			float: left
+			margin: 0 0 0 100px
+			display: block
+		&-overflow
+			width: 100%
+			overflow: hidden
+		#slide1:checked~#slider-active label:nth-child(1),
+		#slide2:checked~#slider-active label:nth-child(2),
+		#slide3:checked~#slider-active label:nth-child(3),
+		#slide4:checked~#slider-active label:nth-child(4),
+		#slide5:checked~#slider-active label:nth-child(5)
+			width: 15px
+			height: 15px
+			border: 2px solid #d0beab
+			background-color: transparent
+		&-inner
+			display: flex
+			width: 500%
+			overflow-y: hidden
+			transition: all .5s ease
+		.slider__gradient
+				display: block
+				content: ""
+				width: 100%
+				height: 100%
+				position: absolute
+				background-image: linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7))
+				top: 0
+		&__input
+			display: none
+		&-controls
+			position: absolute
+			width: 100%
+			height: 50px
+			top: 45%
+			& label
+				width: 50px
+				height: 50px
+				cursor: pointer
+				opacity: 0.6
+				&:hover
+					opacity: 1
+		&-active
+			position: absolute
+			display: flex
+			flex-direction: row
+			flex-wrap: nowrap
+			justify-content: space-between
+			align-items: center
+			align-self: center
+			width: 100px
+			bottom: 42px
+			left: 909px
+			label
+				width: 11px
+				height: 11px
+				background-color: #8e8e8e
+				border-radius: 50%
+				cursor: pointer
+			  // &:hover
+					// background-color: #333
+					// border-color: #777
+		&-text-wrapper
+			position: absolute
 			width: 589px
-			color: #fff	
-		&__h2
-			+fnt-raleway(500, 36px, normal)
-			margin-bottom: 10px
-		&__h1
-			+fnt-raleway(700, 52px, normal)
-			margin-bottom: 10px
-		&__p
-			+fnt-montseratt(300, 16px, 24px)
-			padding: 0 13px 0 13px
-			word-break: break-all
-			margin-bottom: 50px
-		&__button
-			width: 170px
-			height: 50px
-			border: none
-			border-radius: 3px
-			outline: none
-			background-color: $clr-purchase-now-button
-			+fnt-raleway(700, 14px, 23px)
-			color: #fff	
-			text-transform: uppercase
-			&:hover
-				background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.4))
-			&:active
-				background-image: linear-gradient(to top, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.4))
-		&__arrow
-			width: 50px
-			height: 50px
-			border-left: 2px solid #c7b299
-			border-bottom: 2px solid #c7b299
-			&--left
-				transform: rotate(45deg)
-			&--right
-				transform: rotate(-135deg)
-			&:hover
-				border-color: #e4e0d7
-	.slider-buttons
-		display: flex
-		flex-direction: row
-		flex-wrap: nowrap
-		justify-content: space-between
-		align-items: center
-		align-self: center
-		width: 100px
-		&__circle
-			width: 11px
-			height: 11px
-			background-color: #8e8e8e
-			border-radius: 50%
-			&--active
-				width: 15px
-				height: 15px
-				border: 2px solid #d0beab
-				background-color: transparent
+			color: #fff
+			top: 40%
+			left: 666px
+			text-align: center
+			-webkit-transform: translateZ(0)
+			.slider__h2
+				+fnt-raleway(500, 36px, normal)
+				margin-bottom: 10px
+			.slider__h1
+				+fnt-raleway(700, 52px, normal)
+				margin-bottom: 10px
+			.slider__p
+				+fnt-montseratt(300, 16px, 24px)
+				padding: 0 13px 0 13px
+				word-break: break-all
+				margin-bottom: 50px
+			.slider__button
+				width: 170px
+				height: 50px
+				border: none
+				border-radius: 3px
+				outline: none
+				background-color: $clr-purchase-now-button
+				+fnt-raleway(700, 14px, 23px)
+				color: #fff	
+				text-transform: uppercase
+				&:hover
+					background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.4))
+				&:active
+					background-image: linear-gradient(to top, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.4))
+		// display: flex
+		// flex-direction: row
+		// flex-wrap: nowrap
+		// justify-content: space-between
+		// align-content: center
+		// align-items: center
+		// text-align: center
+
+	// .slider-buttons
+	// 	display: flex
+	// 	flex-direction: row
+	// 	flex-wrap: nowrap
+	// 	justify-content: space-between
+	// 	align-items: center
+	// 	align-self: center
+	// 	width: 100px
+	// 	&__circle
+			// width: 11px
+			// height: 11px
+			// background-color: #8e8e8e
+			// border-radius: 50%
+	// 		&--active
+				// width: 15px
+				// height: 15px
+				// border: 2px solid #d0beab
+				// background-color: transparent
 .sections
 	height: 373px
 	padding: 0 376px
