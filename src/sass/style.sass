@@ -85,20 +85,15 @@ a, label
 	text-decoration: none
 	color: inherit
 .wrapper-main
-	width: $size-wrapper-main-width
+	max-width: $size-wrapper-main-width
 	background-color: $clr-bg-body
 	margin: 0 auto
 .header
-	// display: flex
-	// flex-direction: column
-	// flex-wrap: wrap
-	// justify-content: space-between
-	// height: 1024px
-	// background-image: linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7))
-	// background-repeat: no-repeat, no-repeat
-	// padding: 40px 150px 40px 150px
 	width: 100%
 	position: relative
+	transition: height .3s ease-in
+	background-image: linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(../img/bg_header_mountains.jpg)
+	background-size: cover
 	&-top-logo-wrapper
 		display: flex
 		flex-direction: row
@@ -280,13 +275,14 @@ a, label
 					background-image: linear-gradient(to top, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.4))
 .sections
 	// height: 373px
-	padding: 90px 0 80px 0
+	padding: 90px 0 60px 0
 	display: flex
 	flex-direction: row
+	flex-wrap: wrap
 	justify-content: center
 	align-items: center
 	&-block
-		padding: 0 34px
+		padding: 0 34px 20px
 	.section
 		width: 267px
 		display: flex
@@ -374,10 +370,10 @@ a, label
 		&:active
 			background-image: linear-gradient(to top, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.4))
 .projects
-	height: 1162px
-	padding-top: 81px 
+	// height: 1162px
+	padding: 80px 0 80px
 	&-wrapper
-		width: 1170px
+		max-width: 1170px
 		margin: 0 auto
 		text-align: center
 	&__header
@@ -389,15 +385,17 @@ a, label
 		color: #8c8c8c
 		margin-bottom: 40px
 	&-sections
-		width: 605px
+		// width: 605px
 		margin: 0 auto
 		display: flex
 		flex-direction: row
-		justify-content: space-around
+		flex-wrap: wrap
+		justify-content: center
 	&__section
 		// min-width: 70px
 		height: 32px
 		padding: 5px 20px 0 20px
+		margin: 0 5px 10px 5px
 		border: 1px solid #ebebeb
 		border-radius: 3px
 		text-align: center
@@ -411,8 +409,8 @@ a, label
 		display: flex
 		flex-direction: row
 		flex-wrap: wrap
-		justify-content: space-between
-		margin: 40px 0 10px 0
+		justify-content: center
+		margin: 30px 0 10px -30px
 		.preview__block
 			width: 370px
 			height: 337px
@@ -420,7 +418,7 @@ a, label
 			flex-direction: column
 			flex-wrap: nowrap
 			justify-content: flex-end
-			margin-bottom: 30px
+			margin: 0 0 30px 30px
 			background-color: #fbfaf8
 			transition: background-color .3s ease
 			.block__bottom
@@ -835,3 +833,9 @@ a, label
 			color: #959595
 		&__link:hover
 			color: #c7b299
+
+@media (max-width: 1920px)
+	.slider
+		display: none
+	.header
+		height: 150px

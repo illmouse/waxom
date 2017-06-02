@@ -20,7 +20,7 @@ gulp.task('sass', function() {
 });
 
 gulp.task('pug', function() {
-	return gulp.src('/src/pug/*.pug')
+	return gulp.src('src/pug/*.pug')
 		.pipe(pug())
 		.pipe(gulp.dest('src/'))
 		.pipe(browserSync.reload({stream: true}))
@@ -40,13 +40,13 @@ gulp.task('scripts', function() {
     return gulp.src('src')
         .pipe(concat('libs.min.js'))
         .pipe(uglify())
-        .pipe(gulp.dest('/src/js'));
+        .pipe(gulp.dest('src/js'));
 });
 
 gulp.task('watch', ['browserSync', 'sass', 'pug'], function() {
-	gulp.watch('/src/sass/*.sass', ['sass']);
-	gulp.watch('/src/pug/*.pug', ['pug']);
-	gulp.watch('/src/*.html', browserSync.reload);
+	gulp.watch('src/sass/*.sass', ['sass']);
+	gulp.watch('src/pug/*.pug', ['pug']);
+	gulp.watch('src/*.html', browserSync.reload);
 });
 
 gulp.task('default', ['watch']);

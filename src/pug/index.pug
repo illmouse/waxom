@@ -121,8 +121,8 @@ html(lang='en')
           .projects-preview
             - var projectsContent = [{header:"Claritas Etiam Processus", text:"Photography, Nature"}, {header:"Quam Nutamus Farum", text:"Graphic Design, Mock-Up" }, {header:"Usus Legentis Videntur", text:"Photography, Holiday" }, {header:"Claritas Etiam Processus", text:"Photography, Nature"}, {header:"Quam Nutamus Farum", text:"Graphic Design, Mock-Up" }, {header:"Usus Legentis Videntur", text:"Photography, Holiday" }];
             mixin projects-blocks(project)
-              a(href='#')
-                article(class= "preview__block preview__block--" + (projectsContent.indexOf(project)+1))
+              a(href='#', class= "preview__block preview__block--" + (projectsContent.indexOf(project)+1))
+                article
                   .block__bottom
                     h3.block__header= project.header
                       .block__text= project.text
