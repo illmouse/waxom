@@ -260,16 +260,18 @@ a, label {
         background-image: linear-gradient(to top, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.4)); }
 
 .sections {
-  height: 373px;
-  padding: 0 376px;
+  padding: 90px 0 80px 0;
   display: -webkit-box;
   display: flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
           flex-direction: row;
-  justify-content: space-around;
+  -webkit-box-pack: center;
+          justify-content: center;
   -webkit-box-align: center;
           align-items: center; }
+  .sections-block {
+    padding: 0 34px; }
   .sections .section {
     width: 267px;
     display: -webkit-box;
