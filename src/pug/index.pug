@@ -137,6 +137,7 @@ html(lang='en')
             | Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius, qui sequitur mutationem consuetudium.
           .presentation__time 03:26
       article.mobile-devices
+        img.mobile-devices__hand(src="img/bg_phone_in_hand.png", alt="Hand")
         .mobile-devices-wrapper
           h2.mobile-devices__header Excellent for Mobile Devices.
           p.mobile-devices__text
@@ -187,42 +188,31 @@ html(lang='en')
           p.recent-posts__text
             | Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius. Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium.
           .recent-posts-preview
-            a(href='#')
-              article.recent-posts-block.recent-posts-block--1
-                .recent-posts-block-date
-                  .recent-posts-block-date__date 30
-                  .recent-posts-block-date__month Sep.
-                .recent-posts-block-bottom
-                  h3.recent-posts-block-bottom__header Lorem ipsum dolor sit amet
-                  p.recent-posts-block-bottom__text Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium.
-                  .recent-posts-block-bottom__link Read More
-            a(href='#')
-              article.recent-posts-block.recent-posts-block--2
-                .recent-posts-block-date
-                  .recent-posts-block-date__date 30
-                  .recent-posts-block-date__month Sep.
-                .recent-posts-block-bottom
-                  h3.recent-posts-block-bottom__header Lorem ipsum dolor sit amet
-                  p.recent-posts-block-bottom__text Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium.
-                  .recent-posts-block-bottom__link Read More
-            a(href='#')
-              article.recent-posts-block.recent-posts-block--3
-                .recent-posts-block-date
-                  .recent-posts-block-date__date 30
-                  .recent-posts-block-date__month Sep.
-                .recent-posts-block-bottom
-                  h3.recent-posts-block-bottom__header Lorem ipsum dolor sit amet
-                  p.recent-posts-block-bottom__text Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium.
-                  .recent-posts-block-bottom__link Read More
+            - var i = 1
+            - for (; i<=3; i++) {
+              a(href="#")
+                article(class="recent-posts-block recent-posts-block--" + i)
+                  .recent-posts-block-date
+                    .recent-posts-block-date__date 30
+                    .recent-posts-block-date__month Sep.
+                  .recent-posts-block-bottom
+                    h3.recent-posts-block-bottom__header Lorem ipsum dolor sit amet
+                    p.recent-posts-block-bottom__text Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium.
+                    .recent-posts-block-bottom__link Read More
+            - }
           aside.recent-posts-slider
             .recent-posts-slider__item.recent-posts-slider__item--left
             .recent-posts-slider__item.recent-posts-slider__item--right
       .clients
         .clients-wrapper
-          img.clients__logo(alt='Barber', src='img/img_footer_barber.png')
-          img.clients__logo(alt='Delicious', src='img/img_footer_delicious.png')
-          img.clients__logo(alt='Designers', src='img/img_footer_designers.png')
-          img.clients__logo(alt='Royal', src='img/img_footer_royal.png')
+          .clients__logo
+            img(alt='Barber', src='img/img_footer_barber.png')
+          .clients__logo
+            img(alt='Delicious', src='img/img_footer_delicious.png')
+          .clients__logo
+            img(alt='Designers', src='img/img_footer_designers.png')
+          .clients__logo
+            img(alt='Royal', src='img/img_footer_royal.png')
       footer.footer
         section.footer-bg
           .footer-bg-wrapper
