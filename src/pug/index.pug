@@ -14,9 +14,10 @@ html(lang='en')
             img.header__logo(alt='Waxom-logo', src='img/logo_waxom.png')
             .header__name Waxom
           nav.navbar
-            .navbar-mobile
-                input(id="burger-input", class="burger-input")
-                label(class="burger-label", for="burger-input")
+            //- .navbar-mobile
+            input(type="checkbox", id="burger-input", class="burger-input")
+            label(class="burger-toggle", for="burger-input")
+            label(class="burger-label", for="burger-input")
             .navbar-menu
               - var menu = ['Home', 'About Us', 'Portfolio', 'Features', 'Blog', 'Pricing', 'Shortcodes', 'Contact'];
               for item in menu

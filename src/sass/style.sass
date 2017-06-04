@@ -87,6 +87,7 @@ a, label
 	color: inherit
 .wrapper-main
 	max-width: $size-wrapper-main-width
+	min-width: 720px
 	background-color: $clr-bg-body
 	margin: 0 auto
 .header
@@ -145,19 +146,26 @@ a, label
 	transition: all .3s ease
 	&:hover
 		filter: invert(0.5) sepia(100%)
-.navbar-mobile
-	display: none
 .burger-input
 	display: none
-.burger-label
+.burger-toggle
+	display: none
 	position: absolute
-	display: block
+	width: 30px
+	height: 30px
+	top: 40px
+	right: 50px
+	cursor: pointer
+	z-index: 11
+.burger-label
+	display: none
+	position: absolute
 	width: 30px
 	height: 5px
 	top: 40px
 	right: 50px
 	border-radius: 3px
-	background-color: black
+	background-color: #fff
 	cursor: pointer
 	z-index: 10
 	&::after
@@ -167,7 +175,7 @@ a, label
 		width: 30px
 		height: 5px
 		border-radius: 3px
-		background-color: black
+		background-color: inherit
 		top: 20px					
 	&::before
 		content: ""
@@ -176,7 +184,7 @@ a, label
 		width: 30px
 		height: 5px
 		border-radius: 3px
-		background-color: black
+		background-color: inherit
 		top: 10px
 .slider__slide
 	position: relative
@@ -217,11 +225,11 @@ a, label
 .slider-overflow
 	width: 100%
 	overflow: hidden
-#slide1:checked~#slider-active label:nth-child(1),
-#slide2:checked~#slider-active label:nth-child(2),
-#slide3:checked~#slider-active label:nth-child(3),
-#slide4:checked~#slider-active label:nth-child(4),
-#slide5:checked~#slider-active label:nth-child(5)
+#slide1:checked ~ #slider-active label:nth-child(1),
+#slide2:checked ~ #slider-active label:nth-child(2),
+#slide3:checked ~ #slider-active label:nth-child(3),
+#slide4:checked ~ #slider-active label:nth-child(4),
+#slide5:checked ~ #slider-active label:nth-child(5)
 	width: 15px
 	height: 15px
 	border: 2px solid #d0beab
@@ -911,11 +919,15 @@ a, label
 		z-index: 5
 	.navbar-ico
 		display: none
-	.navbar-mobile
+	.burger-toggle
 		display: block
-	.burger-input:checked ~ .navbar-menu
+	.burger-label
+		display: block
+	#burger-input:checked ~ .navbar-menu
 		display: flex
-	// .burger-label
+	#burger-input:checked ~ .burger-label
+		background-color: black
+
 
 	.sections
 		margin-top: 10vh
