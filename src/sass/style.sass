@@ -102,6 +102,7 @@ a, label
 	flex-wrap: nowrap
 	justify-content: space-between
 	align-items: center
+	margin-right: 15px
 .header__name
 	+fnt-raleway(400, 34px, normal)
 	color: #fff
@@ -110,11 +111,14 @@ a, label
 	align-self: center
 	flex-direction: row
 	flex-wrap: nowrap
-	justify-content: space-between
+	justify-content: space-around
 	width: $size-header-top-width
+	left: 0
+	right: 0
 	margin-left: auto
+	margin-right: auto
 	position: absolute
-	padding: 40px 20% 0 20%
+	padding: 40px 10% 0 10%
 	z-index: 2
 .navbar
 	display: flex
@@ -188,7 +192,7 @@ a, label
 		top: 10px
 .slider__slide
 	position: relative
-	height: 1024px
+	max-height: 1024px
 #slide1:checked
 	~ #slider-slides .slider-inner
 		margin-left: 0
@@ -239,6 +243,8 @@ a, label
 	width: 500%
 	overflow-y: hidden
 	transition: all .5s ease
+	img
+		max-width: 100%
 .slider__gradient
 		display: block
 		content: ""
@@ -261,7 +267,7 @@ a, label
 		opacity: 0.6
 		&:hover
 			opacity: 1
-.slider--active
+.slider-active
 	position: absolute
 	display: flex
 	flex-direction: row
@@ -270,8 +276,11 @@ a, label
 	align-items: center
 	align-self: center
 	width: 100px
-	bottom: 42px
-	left: 909px
+	bottom: 3%
+	left: 0
+	right: 0
+	margin-left: auto
+	margin-right: auto
 	& label
 		width: 11px
 		height: 11px
@@ -283,7 +292,10 @@ a, label
 	width: 589px
 	color: #fff
 	top: 40%
-	left: 666px
+	left: 0
+	right: 0
+	margin-left: auto
+	margin-right: auto
 	text-align: center
 	-webkit-transform: translateZ(0)
 .slider__h2
@@ -364,7 +376,7 @@ a, label
 	background-color: $clr-bg-browser-preview
 	background-image: $bg-browser-preview-center, $bg-browser-preview-right, $bg-browser-preview-left
 	background-repeat: no-repeat, no-repeat, no-repeat
-	background-position: 576px 100%, 806px 100%, 346px 100%
+	background-position: center 100%, 70% 100%, 30% 100%
 .browser-preview-wrapper
 	width: 770px
 	margin: 0 auto
@@ -550,16 +562,15 @@ a, label
 	color: #c7b299
 .mobile-devices
 	background-color: $clr-bg-mobile-devices
-	background-repeat: no-repeat
-	background-position: 423px 100%
-	padding: 80px 0 0 0
+	padding: 80px 23% 0 20%
 	display: flex
 	justify-content: center
 	align-items: center
 .mobile-devices__hand
 	align-self: flex-end
 .mobile-devices-wrapper
-	width: 657px
+	// width: 657px
+
 .mobile-devices__header
 	+fnt-raleway(600, 30px, normal)
 	color: #555555
@@ -667,7 +678,7 @@ a, label
 		.recent-posts-block-date__date
 			background-color: #c7b299
 		.recent-posts-block-date__month
-			background-color: #a48d72
+			background-color: #a48d72m
 .recent-posts-block--1
 	background-image: $bg-recent-posts-block--1
 	background-repeat: no-repeat			
@@ -788,6 +799,8 @@ a, label
 	+fnt-raleway(400, 34px, normal)
 	align-items: center
 	padding-bottom: 0
+.footer-bg-section__header--widgets
+	justify-content: center
 .footer-bg-section__p
 	+fnt-montseratt(300, 14px, 24px)
 	color: #555555
@@ -827,11 +840,12 @@ a, label
 	display: flex
 	flex-direction: row
 	flex-wrap: wrap
-	justify-content: space-between
+	justify-content: center
+	margin: -5px
 .footer-bg-section-widget
 	width: 130px
 	height: 98px
-	margin-bottom: 10px
+	margin: 5px
 	background-repeat: no-repeat
 	transition: transform .3s ease
 	&:hover
@@ -863,12 +877,12 @@ a, label
 	justify-content: space-between
 	flex-shrink: 0
 	margin-bottom: 10px
+	margin-right: 15px
 .footer-sm-right
 	display: flex
 	flex-direction: row
 	justify-content: space-between
 	flex-shrink: 0
-	align-items: center
 .footer-sm__separator
 	width: 1px
 	height: 100%
@@ -880,18 +894,20 @@ a, label
 .footer-sm__link:hover
 	color: #c7b299
 
-@media (max-width: 1920px)
+@media screen or (max-width: 1024px)
 	.slider,
 	.browser-preview,
-	// .purchase-now,
+	.mobile-devices__hand,
 	.counters,
 	.footer-bg
 		display: none
 	.header
 		height: 100px
 		padding: 20px 30px
+		border-bottom: 2px solid black
 		position: fixed
 		top: 0
+		left: 0
 		z-index: 1
 	.header-top
 		padding: 0
@@ -899,23 +915,22 @@ a, label
 		justify-content: flex-start
 		position: static
 	.navbar
-		// display: none
 		width: 100%
 		position: absolute
 		top: 0
 		left: 0
 		right: 0
 	.navbar-menu
-		// position: absolute
 		display: none
 		width: 100%
 		margin: 0
 		background-color: #fff
+		border-bottom: 2px solid black
 		flex-wrap: wrap
 		flex-direction: column
 		color: black
 		top: 0
-		font-size: 50px
+		font-size: 40px
 		z-index: 5
 	.navbar-ico
 		display: none
@@ -927,12 +942,12 @@ a, label
 		display: flex
 	#burger-input:checked ~ .burger-label
 		background-color: black
-
-
 	.sections
-		margin-top: 10vh
+		margin-top: 100px
 	.purchase-now
 		justify-content: space-around
+	.mobile-devices
+		padding: 80px 10% 80px 10%
 	.clients
 		padding: 2%
 	.footer-sm-wrapper
