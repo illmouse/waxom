@@ -78,6 +78,8 @@ $bg-footer-bg-section-widget--4: url(../img/img_widget_icons.jpg)
 	box-sizing: border-box
 body
 	margin: 0
+	height: 100%
+	width: 100%
 p, h1, h2, h3
 	margin: 0
 a, label
@@ -93,185 +95,215 @@ a, label
 	transition: height .3s ease-in
 	background-image: linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(../img/bg_header_mountains.jpg)
 	background-size: cover
-	&-top-logo-wrapper
-		display: flex
-		flex-direction: row
-		flex-wrap: nowrap
-		justify-content: space-between
-		align-items: center
-	&__name
-		+fnt-raleway(400, 34px, normal)
-		color: #fff
-	&-top
-		display: flex
-		align-self: center
-		flex-direction: row
-		flex-wrap: nowrap
-		justify-content: space-between
-		width: $size-header-top-width
-		margin-left: auto
+.header-top-logo-wrapper
+	display: flex
+	flex-direction: row
+	flex-wrap: nowrap
+	justify-content: space-between
+	align-items: center
+.header__name
+	+fnt-raleway(400, 34px, normal)
+	color: #fff
+.header-top
+	display: flex
+	align-self: center
+	flex-direction: row
+	flex-wrap: nowrap
+	justify-content: space-between
+	width: $size-header-top-width
+	margin-left: auto
+	position: absolute
+	padding: 40px 20% 0 20%
+	z-index: 2
+.navbar
+	display: flex
+	flex-direction: row
+	flex-wrap: nowrap
+	justify-content: flex-end
+	align-items: center
+.navbar-menu
+	display: flex
+	flex-direction: row
+	flex-wrap: nowrap
+	justify-content: space-between
+	align-items: center
+	min-width: 640px
+	margin-right: 63px
+	+fnt-montseratt(300, 14px, normal)
+	color: #fff
+.navbar-menu__item
+	transition: color .3s ease
+	&:hover
+		color: #c7b299
+.navbar-ico
+	min-width: 70px
+	display: flex
+	flex-direction: row
+	flex-wrap: nowrap
+	justify-content: space-between
+.navbar__icon
+	transition: all .3s ease
+	&:hover
+		filter: invert(0.5) sepia(100%)
+.navbar-mobile
+	display: none
+.burger-input
+	display: none
+.burger-label
+	position: absolute
+	display: block
+	width: 30px
+	height: 5px
+	top: 40px
+	right: 50px
+	border-radius: 3px
+	background-color: black
+	cursor: pointer
+	z-index: 10
+	&::after
+		content: ""
 		position: absolute
-		padding: 40px 20% 0 20%
-		z-index: 2
-		.navbar
-			display: flex
-			flex-direction: row
-			flex-wrap: nowrap
-			justify-content: flex-end
-			align-items: center
-			.navbar-menu
-				display: flex
-				flex-direction: row
-				flex-wrap: nowrap
-				justify-content: space-between
-				align-items: center
-				min-width: 640px
-				margin-right: 63px
-				+fnt-montseratt(300, 14px, normal)
-				color: #fff
-				&__item
-					transition: color .3s ease
-					&:hover
-						color: #c7b299
-			.navbar-ico
-				min-width: 70px
-				display: flex
-				flex-direction: row
-				flex-wrap: nowrap
-				justify-content: space-between
-				.navbar__icon
-					transition: all .3s ease
-					&:hover
-						filter: invert(0.5) sepia(100%)
-	.slider
-		&__slide
-			position: relative
-			height: 1024px
-		#slide1:checked
-			~ #slider-slides .slider-inner
-				margin-left: 0
-		#slide2:checked
-			~ #slider-slides .slider-inner
-				margin-left: -100%
-		#slide3:checked
-			~ #slider-slides .slider-inner
-				margin-left: -200%
-		#slide4:checked
-			~ #slider-slides .slider-inner
-				margin-left: -300%
-		#slide5:checked
-			~ #slider-slides .slider-inner
-				margin-left: -400%
-		#slide1:checked ~ #slider-controls label:nth-child(2), 
-		#slide2:checked ~ #slider-controls label:nth-child(3), 
-		#slide3:checked ~ #slider-controls label:nth-child(4), 
-		#slide4:checked ~ #slider-controls label:nth-child(5), 
-		#slide5:checked ~ #slider-controls label:nth-child(1)
-			background: url('../img/chevron-thin-right.svg') no-repeat
-			float: right
-			margin: 0 100px 0 0
-			display: block
-		#slide1:checked ~ #slider-controls label:nth-child(5),
-		#slide2:checked ~ #slider-controls label:nth-child(1),
-		#slide3:checked ~ #slider-controls label:nth-child(2),
-		#slide4:checked ~ #slider-controls label:nth-child(3),
-		#slide5:checked ~ #slider-controls label:nth-child(4)
-			background: url('../img/chevron-thin-left.svg') no-repeat
-			float: left
-			margin: 0 0 0 100px
-			display: block
-		&-overflow
-			width: 100%
-			overflow: hidden
-		#slide1:checked~#slider-active label:nth-child(1),
-		#slide2:checked~#slider-active label:nth-child(2),
-		#slide3:checked~#slider-active label:nth-child(3),
-		#slide4:checked~#slider-active label:nth-child(4),
-		#slide5:checked~#slider-active label:nth-child(5)
-			width: 15px
-			height: 15px
-			border: 2px solid #d0beab
-			background-color: transparent
-		&-inner
-			display: flex
-			width: 500%
-			overflow-y: hidden
-			transition: all .5s ease
-		.slider__gradient
-				display: block
-				content: ""
-				width: 100%
-				height: 100%
-				position: absolute
-				background-image: linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7))
-				top: 0
-		&__input
-			display: none
-		&-controls
-			position: absolute
-			width: 100%
-			height: 50px
-			top: 45%
-			& label
-				width: 50px
-				height: 50px
-				cursor: pointer
-				opacity: 0.6
-				&:hover
-					opacity: 1
-		&-active
-			position: absolute
-			display: flex
-			flex-direction: row
-			flex-wrap: nowrap
-			justify-content: space-between
-			align-items: center
-			align-self: center
-			width: 100px
-			bottom: 42px
-			left: 909px
-			label
-				width: 11px
-				height: 11px
-				background-color: #8e8e8e
-				border-radius: 50%
-				cursor: pointer
-			  // &:hover
-					// background-color: #333
-					// border-color: #777
-		&-text-wrapper
-			position: absolute
-			width: 589px
-			color: #fff
-			top: 40%
-			left: 666px
-			text-align: center
-			-webkit-transform: translateZ(0)
-			.slider__h2
-				+fnt-raleway(500, 36px, normal)
-				margin-bottom: 10px
-			.slider__h1
-				+fnt-raleway(700, 52px, normal)
-				margin-bottom: 10px
-			.slider__p
-				+fnt-montseratt(300, 16px, 24px)
-				padding: 0 13px 0 13px
-				word-break: break-all
-				margin-bottom: 50px
-			.slider__button
-				width: 170px
-				height: 50px
-				border: none
-				border-radius: 3px
-				outline: none
-				background-color: $clr-purchase-now-button
-				+fnt-raleway(700, 14px, 23px)
-				color: #fff	
-				text-transform: uppercase
-				&:hover
-					background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.4))
-				&:active
-					background-image: linear-gradient(to top, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.4))
+		display: block
+		width: 30px
+		height: 5px
+		border-radius: 3px
+		background-color: black
+		top: 20px					
+	&::before
+		content: ""
+		position: absolute
+		display: block
+		width: 30px
+		height: 5px
+		border-radius: 3px
+		background-color: black
+		top: 10px
+.slider
+.slider__slide
+	position: relative
+	height: 1024px
+#slide1:checked
+	~ #slider-slides .slider-inner
+		margin-left: 0
+#slide2:checked
+	~ #slider-slides .slider-inner
+		margin-left: -100%
+#slide3:checked
+	~ #slider-slides .slider-inner
+		margin-left: -200%
+#slide4:checked
+	~ #slider-slides .slider-inner
+		margin-left: -300%
+#slide5:checked
+	~ #slider-slides .slider-inner
+		margin-left: -400%
+#slide1:checked ~ #slider-controls label:nth-child(2), 
+#slide2:checked ~ #slider-controls label:nth-child(3), 
+#slide3:checked ~ #slider-controls label:nth-child(4), 
+#slide4:checked ~ #slider-controls label:nth-child(5), 
+#slide5:checked ~ #slider-controls label:nth-child(1)
+	background: url('../img/chevron-thin-right.svg') no-repeat
+	float: right
+	margin: 0 100px 0 0
+	display: block
+#slide1:checked ~ #slider-controls label:nth-child(5),
+#slide2:checked ~ #slider-controls label:nth-child(1),
+#slide3:checked ~ #slider-controls label:nth-child(2),
+#slide4:checked ~ #slider-controls label:nth-child(3),
+#slide5:checked ~ #slider-controls label:nth-child(4)
+	background: url('../img/chevron-thin-left.svg') no-repeat
+	float: left
+	margin: 0 0 0 100px
+	display: block
+.slider-overflow
+	width: 100%
+	overflow: hidden
+#slide1:checked~#slider-active label:nth-child(1),
+#slide2:checked~#slider-active label:nth-child(2),
+#slide3:checked~#slider-active label:nth-child(3),
+#slide4:checked~#slider-active label:nth-child(4),
+#slide5:checked~#slider-active label:nth-child(5)
+	width: 15px
+	height: 15px
+	border: 2px solid #d0beab
+	background-color: transparent
+.slider-inner
+	display: flex
+	width: 500%
+	overflow-y: hidden
+	transition: all .5s ease
+.slider__gradient
+		display: block
+		content: ""
+		width: 100%
+		height: 100%
+		position: absolute
+		background-image: linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7))
+		top: 0
+.slider__input
+	display: none
+.slider-controls
+	position: absolute
+	width: 100%
+	height: 50px
+	top: 45%
+	& label
+		width: 50px
+		height: 50px
+		cursor: pointer
+		opacity: 0.6
+		&:hover
+			opacity: 1
+.slider--active
+	position: absolute
+	display: flex
+	flex-direction: row
+	flex-wrap: nowrap
+	justify-content: space-between
+	align-items: center
+	align-self: center
+	width: 100px
+	bottom: 42px
+	left: 909px
+	& label
+		width: 11px
+		height: 11px
+		background-color: #8e8e8e
+		border-radius: 50%
+		cursor: pointer
+.slider-text-wrapper
+	position: absolute
+	width: 589px
+	color: #fff
+	top: 40%
+	left: 666px
+	text-align: center
+	-webkit-transform: translateZ(0)
+.slider__h2
+	+fnt-raleway(500, 36px, normal)
+	margin-bottom: 10px
+.slider__h1
+	+fnt-raleway(700, 52px, normal)
+	margin-bottom: 10px
+.slider__p
+	+fnt-montseratt(300, 16px, 24px)
+	padding: 0 13px 0 13px
+	word-break: break-all
+	margin-bottom: 50px
+.slider__button
+	width: 170px
+	height: 50px
+	border: none
+	border-radius: 3px
+	outline: none
+	background-color: $clr-purchase-now-button
+	+fnt-raleway(700, 14px, 23px)
+	color: #fff	
+	text-transform: uppercase
+	&:hover
+		background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.4))
+	&:active
+		background-image: linear-gradient(to top, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.4))
 .sections
 	// height: 373px
 	padding: 90px 0 60px 0
@@ -280,45 +312,45 @@ a, label
 	flex-wrap: wrap
 	justify-content: center
 	align-items: center
-	&-block
-		padding: 0 34px 20px
-	.section
-		width: 267px
-		display: flex
-		flex-direction: column
-		justify-content: space-around
-		align-items: center
-		&__icon
-			height: 50px
-			margin-bottom: 30px
-			&--dev
-				width: 43px
-			&--marketing
-				width: 51px
-		&__header
-			+fnt-raleway(600, 22px, normal)
-			color: #555555
-			margin-bottom: 19px
-			transition: all .5s ease
-		&__text
-			+fnt-montseratt(300, 14px, 24px)
-			color: #8c8c8c
-			text-align: center
-			margin-bottom: 30px
-		&__marker
-			width: 70px
-			height: 3px
-			background-color: $clr-section-marker
-			transition: all .5s ease
-		.fill
-			transition: all .5s ease
-		&:hover
-			.fill
-				fill: #c7b299
-			.section__header
-				color: #c7b299
-			.section__marker
-				background-color: #c7b299
+.sections-block
+	padding: 0 34px 20px
+.section
+	width: 267px
+	display: flex
+	flex-direction: column
+	justify-content: space-around
+	align-items: center
+.section__icon
+	height: 50px
+	margin-bottom: 30px
+	&--dev
+		width: 43px
+	&--marketing
+		width: 51px
+.section__header
+	+fnt-raleway(600, 22px, normal)
+	color: #555555
+	margin-bottom: 19px
+	transition: all .5s ease
+.section__text
+	+fnt-montseratt(300, 14px, 24px)
+	color: #8c8c8c
+	text-align: center
+	margin-bottom: 30px
+.section__marker
+	width: 70px
+	height: 3px
+	background-color: $clr-section-marker
+	transition: all .5s ease
+.fill
+	transition: all .5s ease
+.section:hover
+	.fill
+		fill: #c7b299
+	.section__header
+		color: #c7b299
+	.section__marker
+		background-color: #c7b299
 .browser-preview
 	height: 700px
 	padding-top: 83px
@@ -373,105 +405,105 @@ a, label
 .projects
 	// height: 1162px
 	padding: 80px 0 80px
-	&-wrapper
-		max-width: 1170px
-		margin: 0 auto
-		text-align: center
-	&__header
-		+fnt-raleway(600, 30px, normal)
-		color: #555555
-		margin-bottom: 24px
-	&__text
-		+fnt-montseratt(300, 16px, 28px)
-		color: #8c8c8c
-		margin-bottom: 40px
-	&-sections
-		// width: 605px
-		margin: 0 auto
-		display: flex
-		flex-direction: row
-		flex-wrap: wrap
-		justify-content: center
-	&__section
-		// min-width: 70px
-		height: 32px
-		padding: 5px 20px 0 20px
-		margin: 0 5px 10px 5px
-		border: 1px solid #ebebeb
-		border-radius: 3px
-		text-align: center
-		+fnt-montseratt(300, 14px, 21px)
-		color: #8c8c8c
-		transition: background-color .3s ease
-		&:hover
-			background-color: #998675
-			color: #fff
-	&-preview
+.projects-wrapper
+	max-width: 1170px
+	margin: 0 auto
+	text-align: center
+.projects__header
+	+fnt-raleway(600, 30px, normal)
+	color: #555555
+	margin-bottom: 24px
+.projects__text
+	+fnt-montseratt(300, 16px, 28px)
+	color: #8c8c8c
+	margin-bottom: 40px
+.projects-sections
+	// width: 605px
+	margin: 0 auto
+	display: flex
+	flex-direction: row
+	flex-wrap: wrap
+	justify-content: center
+.projects__section
+	// min-width: 70px
+	height: 32px
+	padding: 5px 20px 0 20px
+	margin: 0 5px 10px 5px
+	border: 1px solid #ebebeb
+	border-radius: 3px
+	text-align: center
+	+fnt-montseratt(300, 14px, 21px)
+	color: #8c8c8c
+	transition: background-color .3s ease
+	&:hover
+		background-color: #998675
+		color: #fff
+.projects-preview
 		display: flex
 		flex-direction: row
 		flex-wrap: wrap
 		justify-content: center
 		margin: 30px 0 10px -30px
-		.preview__block
-			width: 370px
-			height: 337px
-			display: flex
-			flex-direction: column
-			flex-wrap: nowrap
-			justify-content: flex-end
-			margin: 0 0 30px 30px
-			background-color: #fbfaf8
-			transition: background-color .3s ease
-			.block__bottom
-				height: 100px
-				padding: 30px 0 0 28px
-				text-align: left
-				.block__header
-					+fnt-raleway(500, 20px, normal)
-					color: #c7b299
-					margin-bottom: 5px
-				.block__text
-					+fnt-montseratt(300, 14px, 20px)
-					color: #d1d1d1
-			&:hover
-				background-color: #362f2d
-				.block__header
-					color: #fff
-				.block__text
-					color: #c7b299
-			&--1
-				background-image: $bg-projects-preview-block--1
-				background-repeat: no-repeat
-			&--2
-				background-image: $bg-projects-preview-block--2
-				background-repeat: no-repeat
-			&--3
-				background-image: $bg-projects-preview-block--3
-				background-repeat: no-repeat
-			&--4
-				background-image: $bg-projects-preview-block--4
-				background-repeat: no-repeat
-			&--5
-				background-image: $bg-projects-preview-block--5
-				background-repeat: no-repeat
-			&--6
-				background-image: $bg-projects-preview-block--6
-				background-repeat: no-repeat
-	&__button
-		width: 170px
-		height: 50px
-		background-color: #998675
-		+fnt-raleway(700, 14px, 23px)
-		color: #fff
-		text-transform: uppercase
-		border: none
-		outline: none
-		border-radius: 3px
-		transition: all .5s ease
-		&:hover
-			background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.4))
-		&:active
-			background-image: linear-gradient(to top, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.4))
+.preview__block
+	width: 370px
+	height: 337px
+	display: flex
+	flex-direction: column
+	flex-wrap: nowrap
+	justify-content: flex-end
+	margin: 0 0 30px 30px
+	background-color: #fbfaf8
+	transition: background-color .3s ease
+	&:hover
+		background-color: #362f2d
+		.block__header
+			color: #fff
+		.block__text
+			color: #c7b299
+.preview__block--1
+	background-image: $bg-projects-preview-block--1
+	background-repeat: no-repeat
+.preview__block--2
+	background-image: $bg-projects-preview-block--2
+	background-repeat: no-repeat
+.preview__block--3
+	background-image: $bg-projects-preview-block--3
+	background-repeat: no-repeat
+.preview__block--4
+	background-image: $bg-projects-preview-block--4
+	background-repeat: no-repeat
+.preview__block--5
+	background-image: $bg-projects-preview-block--5
+	background-repeat: no-repeat
+.preview__block--6
+	background-image: $bg-projects-preview-block--6
+	background-repeat: no-repeat
+.block__bottom
+	height: 100px
+	padding: 30px 0 0 28px
+	text-align: left
+.block__header
+	+fnt-raleway(500, 20px, normal)
+	color: #c7b299
+	margin-bottom: 5px
+.block__text
+	+fnt-montseratt(300, 14px, 20px)
+	color: #d1d1d1
+.projects__button
+	width: 170px
+	height: 50px
+	background-color: #998675
+	+fnt-raleway(700, 14px, 23px)
+	color: #fff
+	text-transform: uppercase
+	border: none
+	outline: none
+	border-radius: 3px
+	transition: all .5s ease
+	&:hover
+		background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.4))
+	&:active
+		background-image: linear-gradient(to top, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.4))
 
 .presentation
 	height: 705px
@@ -484,32 +516,32 @@ a, label
 	align-content: center
 	align-items: center
 	text-align: center
-	&-wrapper
-		width: 589px
-		color: #fff	
-	&__playbtn
-		display: block
-		width: 100px
-		height: 100px
-		margin: 0 auto
-		background: url(../img/ico_present_btn.png), rgba(0,0,0,0.2)
-		background-repeat: no-repeat, no-repeat
-		background-position: 50% 50%
-		border-radius: 50%
-		transition: transform .2s ease-in
-		margin-bottom: 40px
-		&:hover
-			transform: scale(1.1)
-	&__h2
-		+fnt-raleway(500, 36px, normal)
-		margin-bottom: 30px
-	&__p
-		+fnt-montseratt(300, 16px, 24px)
-		padding: 0 13px 0 13px
-		margin-bottom: 40px
-	&__time
-		+fnt-montseratt(400, 14px, 24px)
-		color: #c7b299
+.presentation-wrapper
+	width: 589px
+	color: #fff	
+.presentation__playbtn
+	display: block
+	width: 100px
+	height: 100px
+	margin: 0 auto
+	background: url(../img/ico_present_btn.png), rgba(0,0,0,0.2)
+	background-repeat: no-repeat, no-repeat
+	background-position: 50% 50%
+	border-radius: 50%
+	transition: transform .2s ease-in
+	margin-bottom: 40px
+	&:hover
+		transform: scale(1.1)
+.presentation__h2
+	+fnt-raleway(500, 36px, normal)
+	margin-bottom: 30px
+.presentation__p
+	+fnt-montseratt(300, 16px, 24px)
+	padding: 0 13px 0 13px
+	margin-bottom: 40px
+.presentation__time
+	+fnt-montseratt(400, 14px, 24px)
+	color: #c7b299
 .mobile-devices
 	background-color: $clr-bg-mobile-devices
 	background-repeat: no-repeat
@@ -518,329 +550,329 @@ a, label
 	display: flex
 	justify-content: center
 	align-items: center
-	&__hand
-		align-self: flex-end
-	.mobile-devices-wrapper
-		width: 657px
-	&__header
-		+fnt-raleway(600, 30px, normal)
-		color: #555555
-		margin-bottom: 40px
-	&__text
-		+fnt-montseratt(300, 16px, 28px)
-		color: #8c8c8c
-		margin-bottom: 40px
-	&__list
-		padding-left: 80px
-		margin: 0
-	&__item
-		position: relative
-		background-repeat: no-repeat
-		background-position: center left
-		+fnt-montseratt(300, 16px, 32px)
-		color: #8c8c8c
-		padding-left: 29px
-		vertical-align: top
-	&__bullet
-		display: inline-block
+.mobile-devices__hand
+	align-self: flex-end
+.mobile-devices-wrapper
+	width: 657px
+.mobile-devices__header
+	+fnt-raleway(600, 30px, normal)
+	color: #555555
+	margin-bottom: 40px
+.mobile-devices__text
+	+fnt-montseratt(300, 16px, 28px)
+	color: #8c8c8c
+	margin-bottom: 40px
+.mobile-devices__list
+	padding-left: 80px
+	margin: 0
+.mobile-devices__item
+	position: relative
+	background-repeat: no-repeat
+	background-position: center left
+	+fnt-montseratt(300, 16px, 32px)
+	color: #8c8c8c
+	padding-left: 29px
+	vertical-align: top
+.mobile-devices__bullet
+	display: inline-block
+	position: absolute
+	left: -30px
+	top: 3px
+	width: 22px
+	height: 22px
+	border-radius: 50%
+	margin-left: 8px
+	background-color: #c7b299
+	&::after
 		position: absolute
-		left: -30px
-		top: 3px
-		width: 22px
-		height: 22px
-		border-radius: 50%
-		margin-left: 8px
-		background-color: #c7b299
-		&::after
-			position: absolute
-			display: block
-			content: ''
-			width: 6px
-			height: 6px
-			border-left: 2px solid #fff
-			border-bottom: 2px solid #fff
-			top: 30%
-			left: 26%
-			transform: rotate(-135deg)
+		display: block
+		content: ''
+		width: 6px
+		height: 6px
+		border-left: 2px solid #fff
+		border-bottom: 2px solid #fff
+		top: 30%
+		left: 26%
+		transform: rotate(-135deg)
 .counters
 	height: 300px
 	background-image: $bg-counters
 	padding: 69px
-	&-wrapper
-		width: 920px
-		margin: 0 auto
-		display: flex
-		flex-direction: row
-		flex-wrap: nowrap
-		justify-content: space-between
-	&-block
-		display: flex
-		flex-direction: column
-		align-items: center
-	&__icon
-		margin-bottom: 30px
-	&__number
-		+fnt-montseratt(200, 48px, 36px)
-		color: #fff
-		margin-bottom: 21px
-	&__text
-		+fnt-montseratt(300, 14px, 20px)
-		color: #c7b299
-		margin-bottom: 30px
-	&_marker
-		width: 30px
-		height: 2px
-		background-color: #fff
+.counters-wrapper
+	width: 920px
+	margin: 0 auto
+	display: flex
+	flex-direction: row
+	flex-wrap: nowrap
+	justify-content: space-between
+.counters-block
+	display: flex
+	flex-direction: column
+	align-items: center
+.counters__icon
+	margin-bottom: 30px
+.counters__number
+	+fnt-montseratt(200, 48px, 36px)
+	color: #fff
+	margin-bottom: 21px
+.counters__text
+	+fnt-montseratt(300, 14px, 20px)
+	color: #c7b299
+	margin-bottom: 30px
+.counters_marker
+	width: 30px
+	height: 2px
+	background-color: #fff
 .recent-posts
 	// height: 753px
 	background-color: #fff
 	padding: 82px 0 80px 0
-	&-wrapper
-		// width: 1170px
-		margin: 0 auto
-		text-align: center
-	&__header
-		+fnt-raleway(600, 30px, normal)
-		color: #555555
-	&__text
-		+fnt-montseratt(300, 16px, 28px)
-		color: #8c8c8c
-	&-preview
-		display: flex
-		flex-direction: row
-		flex-wrap: wrap
-		justify-content: center
-		margin: 40px 0 10px 0
-		.recent-posts-block
-			display: flex
-			flex-direction: column
-			justify-content: space-between
-			width: 370px
-			height: 395px
-			margin: 0 15px 30px
-			border: 1px solid #f8f8f8
-			transition: background-color .3s ease
-			&-date
-				width: 50px
-				margin: 20px 0 0 20px
-				color: #fff
-				vertical-align: middle
-				&__date
-					height: 35px
-					background-color: #363636
-					+fnt-montseratt(300, 24px, 35px)
-					border-radius: 3px 3px 0 0
-					transition: background-color .3s ease
-				&__month
-					height: 25px
-					background-color: #252525
-					+fnt-roboto(400, 12px, 25px)
-					border-radius: 0 0 3px 3px
-					transition: background-color .3s ease
-			&-bottom
-				height: 175px
-				padding: 30px 0 0 29px
-				text-align: left
-				&__header
-					+fnt-raleway(500, 20px, normal)
-					color: #555555
-					margin-bottom: 19px
-				&__text
-					+fnt-montseratt(300, 14px, 22px)
-					color: #8c8c8c
-					margin-bottom: 27px
-				&__link
-					display: flex
-					justify-content: flex-start
-					align-items: center
-					+fnt-montseratt(300, 14px, 21px)
-					color: #c7b299
-					&::after
-						display: block
-						content: ''
-						width: 0
-						height: 0
-						border: 5px solid transparent
-						border-left: 5px solid #c7b299
-						margin-left: 9px
-			&:hover
-				background-color: #362f2d
-				.recent-posts-block-bottom__header
-					color: #c7b299
-				.recent-posts-block-bottom__text
-					color: #fff
-				.recent-posts-block-date__date
-					background-color: #c7b299
-				.recent-posts-block-date__month
-					background-color: #a48d72
-			&--1
-				background-image: $bg-recent-posts-block--1
-				background-repeat: no-repeat			
-			&--2
-				background-image: $bg-recent-posts-block--2
-				background-repeat: no-repeat			
-			&--3
-				background-image: $bg-recent-posts-block--3
-				background-repeat: no-repeat
-	&-slider
+.recent-posts-wrapper
+	// width: 1170px
+	margin: 0 auto
+	text-align: center
+.recent-posts__header
+	+fnt-raleway(600, 30px, normal)
+	color: #555555
+.recent-posts__text
+	+fnt-montseratt(300, 16px, 28px)
+	color: #8c8c8c
+.recent-posts-preview
+	display: flex
+	flex-direction: row
+	flex-wrap: wrap
+	justify-content: center
+	margin: 40px 0 10px 0
+.recent-posts-block
+	display: flex
+	flex-direction: column
+	justify-content: space-between
+	width: 370px
+	height: 395px
+	margin: 0 15px 30px
+	border: 1px solid #f8f8f8
+	transition: background-color .3s ease
+	&:hover
+		background-color: #362f2d
+		.recent-posts-block-bottom__header
+			color: #c7b299
+		.recent-posts-block-bottom__text
+			color: #fff
+		.recent-posts-block-date__date
+			background-color: #c7b299
+		.recent-posts-block-date__month
+			background-color: #a48d72
+.recent-posts-block--1
+	background-image: $bg-recent-posts-block--1
+	background-repeat: no-repeat			
+.recent-posts-block--2
+	background-image: $bg-recent-posts-block--2
+	background-repeat: no-repeat			
+.recent-posts-block--3
+	background-image: $bg-recent-posts-block--3
+	background-repeat: no-repeat
+.recent-posts-block-date
+	width: 50px
+	margin: 20px 0 0 20px
+	color: #fff
+	vertical-align: middle
+.recent-posts-block-date__date
+	height: 35px
+	background-color: #363636
+	+fnt-montseratt(300, 24px, 35px)
+	border-radius: 3px 3px 0 0
+	transition: background-color .3s ease
+.recent-posts-block-date__month
+	height: 25px
+	background-color: #252525
+	+fnt-roboto(400, 12px, 25px)
+	border-radius: 0 0 3px 3px
+	transition: background-color .3s ease
+.recent-posts-block-bottom
+	height: 175px
+	padding: 30px 0 0 29px
+	text-align: left
+.recent-posts-block-bottom__header
+	+fnt-raleway(500, 20px, normal)
+	color: #555555
+	margin-bottom: 19px
+.recent-posts-block-bottom__text
+	+fnt-montseratt(300, 14px, 22px)
+	color: #8c8c8c
+	margin-bottom: 27px
+.recent-posts-block-bottom__link
+	display: flex
+	justify-content: flex-start
+	align-items: center
+	+fnt-montseratt(300, 14px, 21px)
+	color: #c7b299
+	&::after
+		display: block
+		content: ''
+		width: 0
+		height: 0
+		border: 5px solid transparent
+		border-left: 5px solid #c7b299
+		margin-left: 9px
+.recent-posts-slider
 		display: flex
 		flex-direction: row
 		flex-wrap: nowrap
 		justify-content: center
-		&__item
-			position: relative
-			width: 22px
-			height: 22px
-			border: 1px solid #d1d1d1
-			border-radius: 50%
-			margin-left: 8px
-			&::after
-				position: absolute
-				display: block
-				content: ''
-				width: 6px
-				height: 6px
-				border-left: 2px solid #d1d1d1
-				border-bottom: 2px solid #d1d1d1
-				top: 28%
-				left: 36%
-			&--left::after
-				transform: rotate(45deg)
-			&--right::after
-				transform: rotate(-135deg)
-				left: 26%
+.recent-posts-slider__item
+	position: relative
+	width: 22px
+	height: 22px
+	border: 1px solid #d1d1d1
+	border-radius: 50%
+	margin-left: 8px
+	&::after
+		position: absolute
+		display: block
+		content: ''
+		width: 6px
+		height: 6px
+		border-left: 2px solid #d1d1d1
+		border-bottom: 2px solid #d1d1d1
+		top: 28%
+		left: 36%
+.recent-posts-slider__item--left::after
+	transform: rotate(45deg)
+.recent-posts-slider__item--right::after
+	transform: rotate(-135deg)
+	left: 26%
 .clients
 	// height: 489px
 	background-image: linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), $bg-clients
 	background-repeat: no-repeat, no-repeat
 	background-size: cover, cover
 	padding: 140px 0 140px 0
-	&-wrapper
-		// width: 1110px
-		margin: 0 auto
-		display: flex
-		flex-direction: row
-		justify-content: center
-		align-items: center
-	&__logo
-		padding: 0 45px
-		flex: 0 1 auto
-		img
-			max-width: 100%
-.footer
-	.footer-bg
-		padding: 80px 0 80px 0
-		background-color: $clr-bg-footer-bg
-		&-wrapper
-			display: flex
-			flex-direction: row
-			flex-wrap: nowrap
-			justify-content: center
-			.footer-bg-section
-				width: 270px
-				margin: 0 20px
-				&__header
-					height: 57px
-					margin-bottom: 30px
-					display: flex
-					flex-direction: row
-					align-items: flex-end
-					+fnt-raleway(700, 24px, normal)
-					color: #fff
-				&__header--logo
-					+fnt-raleway(400, 34px, normal)
-					align-items: center
-					padding-bottom: 0
-				&__p
-					+fnt-montseratt(300, 14px, 24px)
-					color: #555555
-					.footer-bg-section__date
-						+fnt-montseratt(300, 12px, 20px)
-						color: #363636
-					&:hover
-						.footer-bg-section__date
-							color: #fff
-						p
-							color: #c7b299
-				&__link
-					display: flex
-					justify-content: flex-start
-					align-items: center
-					+fnt-montseratt(400, 14px, 20px)
-					color: #d1d1d1
-					margin-top: 20px
-					&::after
-						display: block
-						content: ''
-						width: 0
-						height: 0
-						border: 5px solid transparent
-						border-left: 5px solid #d1d1d1
-						margin-left: 9px
-				&__tag
-					color: #00bff3
-				&__shortlink
-					color: #959595
-				&__separator
-					width: 100%
-					height: 1px
-					background-color: #252525
-					margin: 20px 0 20px 0
-				&-widgets
-					display: flex
-					flex-direction: row
-					flex-wrap: wrap
-					justify-content: space-between
-					.footer-bg-section-widget
-						width: 130px
-						height: 98px
-						margin-bottom: 10px
-						background-repeat: no-repeat
-						transition: transform .3s ease
-						&--1
-							background-image: $bg-footer-bg-section-widget--1						
-						&--2
-							background-image: $bg-footer-bg-section-widget--2					
-						&--3
-							background-image: $bg-footer-bg-section-widget--3						
-						&--4
-							background-image: $bg-footer-bg-section-widget--4
-						&:hover
-							transform: scale(1.1)
-	.footer-sm
-		// height: 111px
-		background-color: $clr-bg-footer-sm
-		padding: 35px 19%
-		color: #555555
-		&-wrapper
-			// width: 1170px
-			margin: 0 auto
-			display: flex
-			flex-direction: row
-			justify-content: space-between
-			+fnt-montseratt(300, 13px, 20px)
-			color: #555555
-		&-left
-			display: flex
-			flex-direction: row
-			justify-content: space-between
-			flex-shrink: 0
-			margin-bottom: 10px
-		&-right
-			display: flex
-			flex-direction: row
-			justify-content: space-between
-			flex-shrink: 0
-		&__separator
-			width: 1px
-			height: 100%
-			margin: 0 10px
-			background-color: #555555
-		&__selection
-			color: #959595
-			padding-left: 5px
-		&__link:hover
+.clients-wrapper
+	// width: 1110px
+	margin: 0 auto
+	display: flex
+	flex-direction: row
+	justify-content: center
+	align-items: center
+.clients__logo
+	padding: 0 45px
+	flex: 0 1 auto
+	img
+		max-width: 100%
+.footer-bg
+	padding: 80px 0 80px 0
+	background-color: $clr-bg-footer-bg
+.footer-bg-wrapper
+	display: flex
+	flex-direction: row
+	flex-wrap: nowrap
+	justify-content: center
+.footer-bg-section
+	width: 270px
+	margin: 0 20px
+.footer-bg-section__header
+	height: 57px
+	margin-bottom: 30px
+	display: flex
+	flex-direction: row
+	align-items: flex-end
+	+fnt-raleway(700, 24px, normal)
+	color: #fff
+.footer-bg-section__header--logo
+	+fnt-raleway(400, 34px, normal)
+	align-items: center
+	padding-bottom: 0
+.footer-bg-section__p
+	+fnt-montseratt(300, 14px, 24px)
+	color: #555555
+	&:hover
+		.footer-bg-section__date
+			color: #fff
+		p
 			color: #c7b299
+.footer-bg-section__date
+	+fnt-montseratt(300, 12px, 20px)
+	color: #363636
+.footer-bg-section__link
+	display: flex
+	justify-content: flex-start
+	align-items: center
+	+fnt-montseratt(400, 14px, 20px)
+	color: #d1d1d1
+	margin-top: 20px
+	&::after
+		display: block
+		content: ''
+		width: 0
+		height: 0
+		border: 5px solid transparent
+		border-left: 5px solid #d1d1d1
+		margin-left: 9px
+.footer-bg-section__tag
+	color: #00bff3
+.footer-bg-section__shortlink
+	color: #959595
+.footer-bg-section__separator
+	width: 100%
+	height: 1px
+	background-color: #252525
+	margin: 20px 0 20px 0
+.footer-bg-section-widgets
+	display: flex
+	flex-direction: row
+	flex-wrap: wrap
+	justify-content: space-between
+.footer-bg-section-widget
+	width: 130px
+	height: 98px
+	margin-bottom: 10px
+	background-repeat: no-repeat
+	transition: transform .3s ease
+	&:hover
+		transform: scale(1.1)
+.footer-bg-section-widget--1
+	background-image: $bg-footer-bg-section-widget--1						
+.footer-bg-section-widget--2
+	background-image: $bg-footer-bg-section-widget--2					
+.footer-bg-section-widget--3
+	background-image: $bg-footer-bg-section-widget--3						
+.footer-bg-section-widget--4
+	background-image: $bg-footer-bg-section-widget--4
+.footer-sm
+	// height: 111px
+	background-color: $clr-bg-footer-sm
+	padding: 35px 19%
+	color: #555555
+.footer-sm-wrapper
+	// width: 1170px
+	margin: 0 auto
+	display: flex
+	flex-direction: row
+	justify-content: space-between
+	+fnt-montseratt(300, 13px, 20px)
+	color: #555555
+.footer-sm-left
+	display: flex
+	flex-direction: row
+	justify-content: space-between
+	flex-shrink: 0
+	margin-bottom: 10px
+.footer-sm-right
+	display: flex
+	flex-direction: row
+	justify-content: space-between
+	flex-shrink: 0
+	align-items: center
+.footer-sm__separator
+	width: 1px
+	height: 100%
+	margin: 0 10px
+	background-color: #555555
+.footer-sm__selection
+	color: #959595
+	padding-left: 5px
+.footer-sm__link:hover
+	color: #c7b299
 
 @media (max-width: 1920px)
 	.slider,
@@ -850,44 +882,50 @@ a, label
 	.footer-bg
 		display: none
 	.header
-		height: 10vh
+		height: 100px
 		padding: 20px 30px
 		position: fixed
 		top: 0
 		z-index: 1
-		&-top
-			padding: 0
-			margin: 0
-			justify-content: flex-start
-			position: static
-		.navbar
-			display: none
-			width: 100%
-			position: absolute
-			top: 0
-			left: 0
-			right: 0
-			.navbar-menu
-				// position: absolute
-				width: 100%
-				margin: 0
-				background-color: #fff
-				flex-wrap: wrap
-				flex-direction: column
-				color: black
-				top: 0
-				font-size: 50px
-				z-index: 5
-			.navbar-ico
-				display: none
+	.header-top
+		padding: 0
+		margin: 0
+		justify-content: flex-start
+		position: static
+	.navbar
+		// display: none
+		width: 100%
+		position: absolute
+		top: 0
+		left: 0
+		right: 0
+	.navbar-menu
+		// position: absolute
+		display: none
+		width: 100%
+		margin: 0
+		background-color: #fff
+		flex-wrap: wrap
+		flex-direction: column
+		color: black
+		top: 0
+		font-size: 50px
+		z-index: 5
+	.navbar-ico
+		display: none
+	.navbar-mobile
+		display: block
+	.burger-input:checked ~ .navbar-menu
+		display: flex
+	// .burger-label
+
 	.sections
 		margin-top: 10vh
 	.purchase-now
 		justify-content: space-around
 	.clients
 		padding: 2%
-	.footer
-		.footer-sm-wrapper
-			flex-wrap: wrap
-			justify-content: center
+	.footer-sm-wrapper
+		flex-wrap: wrap
+		justify-content: center
 
