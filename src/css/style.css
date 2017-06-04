@@ -1279,7 +1279,7 @@ a, label {
   #burger-input:checked ~ .burger-label {
     background-color: black; }
   .sections {
-    margin-top: 100px; }
+    margin-top: 50px; }
   .purchase-now {
     justify-content: space-around; }
   .mobile-devices {
