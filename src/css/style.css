@@ -358,10 +358,12 @@ a, label {
 .section__icon {
   height: 50px;
   margin-bottom: 30px; }
-  .section__icon--dev {
-    width: 43px; }
-  .section__icon--marketing {
-    width: 51px; }
+
+.section__icon--dev {
+  width: 43px; }
+
+.section__icon--marketing {
+  width: 51px; }
 
 .section__header {
   font-family: 'Raleway';
@@ -406,24 +408,27 @@ a, label {
   background-image: url(../img/bg_browser_center.jpg), url(../img/bg_browser_right.jpg), url(../img/bg_browser_left.jpg);
   background-repeat: no-repeat, no-repeat, no-repeat;
   background-position: 576px 100%, 806px 100%, 346px 100%; }
-  .browser-preview .browser-preview-wrapper {
-    width: 770px;
-    margin: 0 auto;
-    padding: 0 7px;
-    text-align: center; }
-  .browser-preview__header {
-    font-family: 'Raleway';
-    font-weight: 600;
-    font-size: 30px;
-    line-height: normal;
-    color: #555555;
-    margin-bottom: 24px; }
-  .browser-preview__text {
-    font-family: 'Montserrat';
-    font-weight: 300;
-    font-size: 16px;
-    line-height: 28px;
-    color: #8c8c8c; }
+
+.browser-preview-wrapper {
+  width: 770px;
+  margin: 0 auto;
+  padding: 0 7px;
+  text-align: center; }
+
+.browser-preview__header {
+  font-family: 'Raleway';
+  font-weight: 600;
+  font-size: 30px;
+  line-height: normal;
+  color: #555555;
+  margin-bottom: 24px; }
+
+.browser-preview__text {
+  font-family: 'Montserrat';
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 28px;
+  color: #8c8c8c; }
 
 .purchase-now {
   padding: 40px 20%;
@@ -438,39 +443,43 @@ a, label {
           justify-content: space-between;
   -webkit-box-align: center;
           align-items: center; }
-  .purchase-now-wrapper {
-    margin-bottom: 10px; }
-  .purchase-now__header {
-    font-family: 'Raleway';
-    font-weight: 400;
-    font-size: 28px;
-    line-height: normal;
-    color: #fff; }
-    .purchase-now__header .letterhead {
-      color: #c7b299; }
-  .purchase-now__text {
-    font-family: 'Montserrat';
-    font-weight: 300;
-    font-size: 18px;
-    line-height: normal;
-    color: #615855; }
-  .purchase-now__button {
-    width: 170px;
-    height: 50px;
-    border: none;
-    border-radius: 3px;
-    outline: none;
-    background-color: #998675;
-    font-family: 'Raleway';
-    font-weight: 700;
-    font-size: 14px;
-    line-height: 23px;
-    color: #fff;
-    text-transform: uppercase; }
-    .purchase-now__button:hover {
-      background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.4)); }
-    .purchase-now__button:active {
-      background-image: linear-gradient(to top, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.4)); }
+
+.purchase-now-wrapper {
+  margin-bottom: 10px; }
+
+.purchase-now__header {
+  font-family: 'Raleway';
+  font-weight: 400;
+  font-size: 28px;
+  line-height: normal;
+  color: #fff; }
+  .purchase-now__header .letterhead {
+    color: #c7b299; }
+
+.purchase-now__text {
+  font-family: 'Montserrat';
+  font-weight: 300;
+  font-size: 18px;
+  line-height: normal;
+  color: #615855; }
+
+.purchase-now__button {
+  width: 170px;
+  height: 50px;
+  border: none;
+  border-radius: 3px;
+  outline: none;
+  background-color: #998675;
+  font-family: 'Raleway';
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 23px;
+  color: #fff;
+  text-transform: uppercase; }
+  .purchase-now__button:hover {
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.4)); }
+  .purchase-now__button:active {
+    background-image: linear-gradient(to top, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.4)); }
 
 .projects {
   padding: 80px 0 80px; }
