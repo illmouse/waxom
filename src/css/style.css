@@ -711,7 +711,7 @@ a, label {
 
 .mobile-devices {
   background-color: #fbfaf8;
-  padding: 80px 23% 0 20%;
+  padding-top: 80px;
   display: -webkit-box;
   display: flex;
   -webkit-box-pack: center;
@@ -721,6 +721,9 @@ a, label {
 
 .mobile-devices__hand {
   align-self: flex-end; }
+
+.mobile-devices-wrapper {
+  max-width: 660px; }
 
 .mobile-devices__header {
   font-family: 'Raleway';
@@ -882,7 +885,7 @@ a, label {
     .recent-posts-block:hover .recent-posts-block-date__date {
       background-color: #c7b299; }
     .recent-posts-block:hover .recent-posts-block-date__month {
-      background-color: #a48d72m; }
+      background-color: #a48d72; }
 
 .recent-posts-block--1 {
   background-image: url(../img/img_post_feet.jpg);
