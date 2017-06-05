@@ -13,7 +13,7 @@ gulp.task('sass', function() {
 		.pipe(sourcemaps.init())
 		.pipe(sass().on('error', sass.logError))
 		.pipe(autoprefixer('> 5%', 'last 2 version'))
-		.pipe(sourcemaps.write('../css'))
+		.pipe(sourcemaps.write(''))
 		.pipe(gulp.dest('src/css'))
 		.pipe(browserSync.reload({stream:true}))
 		.pipe(notify({message: 'CSS changed.', onLast: true}))
@@ -46,7 +46,7 @@ gulp.task('scripts', function() {
 gulp.task('watch', ['browserSync', 'sass', 'pug'], function() {
 	gulp.watch('src/sass/*.sass', ['sass']);
 	gulp.watch('src/pug/*.pug', ['pug']);
-	gulp.watch('src/*.html', browserSync.reload);
+	// gulp.watch('src/*.html', browserSync.reload);
 });
 
 gulp.task('default', ['watch']);
