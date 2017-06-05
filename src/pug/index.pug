@@ -39,7 +39,44 @@ html(lang='en')
           #slider-slides.slider-slides
             #slider-overflow.slider-overflow
               .slider-inner
-                - var sliderContent = [{h2: "Unique and Modern Design", h1: "Portfolio PSD Template", p: "Nam liber tempor cum soluta nobis eleifend option congue nihil imper­diet doming id quod mazim placerat facer possim assum.", img: "img/bg_header_mountains.jpg", alt: "Mountains"}, {h2: "Unique and Modern Design", h1: "Portfolio PSD Template 2", p: "Nam liber tempor cum soluta nobis eleifend option congue nihil imper­diet doming id quod mazim placerat facer possim assum.", img: "img/bg_header_city.jpg", alt: "City"}, {h2: "Unique and Modern Design", h1: "Portfolio PSD Template 3", p: "Nam liber tempor cum soluta nobis eleifend option congue nihil imper­diet doming id quod mazim placerat facer possim assum.", img: "img/bg_header_lake.jpg", alt: "Lake"}, {h2: "Unique and Modern Design", h1: "Portfolio PSD Template 4", p: "Nam liber tempor cum soluta nobis eleifend option congue nihil imper­diet doming id quod mazim placerat facer possim assum.", img: "img/bg_header_stars.jpg", alt: "Stars"}, {h2: "Unique and Modern Design", h1: "Portfolio PSD Template 5", p: "Nam liber tempor cum soluta nobis eleifend option congue nihil imper­diet doming id quod mazim placerat facer possim assum.", img: "img/bg_header_cosmos.jpg", alt: "Cosmos"}];
+                -
+                  var sliderContent = [
+                    {
+                      h2: "Unique and Modern Design",
+                      h1: "Portfolio PSD Template",
+                      p: "Nam liber tempor cum soluta nobis eleifend option congue nihil imper­diet doming id quod mazim placerat facer possim assum.",
+                      img: "img/bg_header_mountains.jpg",
+                      alt: "Mountains"
+                    },
+                    {
+                      h2: "Unique and Modern Design",
+                      h1: "Portfolio PSD Template 2",
+                      p: "Nam liber tempor cum soluta nobis eleifend option congue nihil imper­diet doming id quod mazim placerat facer possim assum.",
+                      img: "img/bg_header_city.jpg",
+                      alt: "City"
+                    },
+                    {
+                      h2: "Unique and Modern Design",
+                      h1: "Portfolio PSD Template 3",
+                      p: "Nam liber tempor cum soluta nobis eleifend option congue nihil imper­diet doming id quod mazim placerat facer possim assum.",
+                      img: "img/bg_header_lake.jpg",
+                      alt: "Lake"
+                    },
+                    {
+                      h2: "Unique and Modern Design",
+                      h1: "Portfolio PSD Template 4",
+                      p: "Nam liber tempor cum soluta nobis eleifend option congue nihil imper­diet doming id quod mazim placerat facer possim assum.",
+                      img: "img/bg_header_stars.jpg",
+                      alt: "Stars"
+                    },
+                    {
+                      h2: "Unique and Modern Design",
+                      h1: "Portfolio PSD Template 5",
+                      p: "Nam liber tempor cum soluta nobis eleifend option congue nihil imper­diet doming id quod mazim placerat facer possim assum.",
+                      img: "img/bg_header_cosmos.jpg",
+                      alt: "Cosmos"
+                    }
+                  ];
                 mixin sliders(slide)
                   article.slider__slide
                     img(src= slide.img, alt= slide.alt, class= "slider__image")
@@ -123,7 +160,33 @@ html(lang='en')
             a.projects__section.projects__section--illustration(href='#') Illustration
             a.projects__section.projects__section--photo(href='#') Photography
           .projects-preview
-            - var projectsContent = [{header:"Claritas Etiam Processus", text:"Photography, Nature"}, {header:"Quam Nutamus Farum", text:"Graphic Design, Mock-Up" }, {header:"Usus Legentis Videntur", text:"Photography, Holiday" }, {header:"Claritas Etiam Processus", text:"Photography, Nature"}, {header:"Quam Nutamus Farum", text:"Graphic Design, Mock-Up" }, {header:"Usus Legentis Videntur", text:"Photography, Holiday" }];
+            -
+              var projectsContent = [
+                {
+                  header:"Claritas Etiam Processus",
+                  text:"Photography, Nature"
+                },
+                {
+                  header:"Quam Nutamus Farum",
+                  text:"Graphic Design, Mock-Up"
+                },
+                {
+                  header:"Usus Legentis Videntur",
+                  text:"Photography, Holiday"
+                },
+                {
+                  header:"Claritas Etiam Processus",
+                  text:"Photography, Nature"
+                },
+                {
+                  header:"Quam Nutamus Farum",
+                  text:"Graphic Design, Mock-Up"
+                },
+                {
+                  header:"Usus Legentis Videntur",
+                  text:"Photography, Holiday"
+                }
+              ];
             mixin projects-blocks(project)
               a(href='#', class= "preview__block preview__block--" + (projectsContent.indexOf(project)+1))
                 article
@@ -188,7 +251,7 @@ html(lang='en')
             .counters_marker
       section.recent-posts
         .recent-posts-wrapper
-          h2.recent-posts__header Recent Posts.
+          h2.recent-posts__header Recent Posts
           p.recent-posts__text
             | Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius. Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium.
           .recent-posts-preview
