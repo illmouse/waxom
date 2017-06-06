@@ -6,8 +6,8 @@ $size-header-top-width: 100%
 $clr-bg-body: #fff
 $clr-bg-browser-preview: #fbfaf8
 $clr-bg-mobile-devices: #fbfaf8
-$clr-bg-footer-bg: #191919
-$clr-bg-footer-sm: #111111
+$clr-bg-footer-bg: #121212
+$clr-bg-footer-sm: #080808
 $clr-section-icon: #555555
 $clr-section-marker: #f1eee9
 $clr-purchase-now-button: #998675
@@ -95,7 +95,7 @@ a, label
 	width: 100%
 	position: relative
 	transition: height .3s ease-in
-	background-image: linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(../img/bg_header_mountains.jpg)
+	background-image: linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), $bg-header
 	background-size: cover
 .header-top-logo-wrapper
 	display: flex
@@ -437,7 +437,8 @@ a, label
 .projects__text
 	+fnt-montseratt(300, 16px, 28px)
 	color: #8c8c8c
-	margin-bottom: 40px
+	margin: 0 auto 40px auto
+	max-width: 757px
 .projects-sections
 	// width: 605px
 	margin: 0 auto
@@ -481,6 +482,8 @@ a, label
 			color: #fff
 		.block__text
 			color: #c7b299
+		.block__bottom::before
+				border-bottom: 10px solid #362f2d
 .preview__block--1
 	background-image: $bg-projects-preview-block--1
 	background-repeat: no-repeat
@@ -500,9 +503,20 @@ a, label
 	background-image: $bg-projects-preview-block--6
 	background-repeat: no-repeat
 .block__bottom
+	position: relative
 	height: 100px
 	padding: 30px 0 0 28px
 	text-align: left
+	&::before
+		position: absolute
+		bottom: 100%
+		left: 5%
+		content:: ""
+		width: 0
+		height: 0
+		border: 10px solid transparent
+		border-bottom: 10px solid #fbfaf8
+		transition: border .3s ease
 .block__header
 	+fnt-raleway(500, 20px, normal)
 	color: #c7b299
@@ -739,27 +753,37 @@ a, label
 		flex-wrap: nowrap
 		justify-content: center
 .recent-posts-slider__item
+	cursor: pointer
 	position: relative
 	width: 22px
 	height: 22px
 	border: 1px solid #d1d1d1
 	border-radius: 50%
 	margin-left: 8px
-	&::after
-		position: absolute
-		display: block
-		content: ''
-		width: 6px
-		height: 6px
-		border-left: 2px solid #d1d1d1
-		border-bottom: 2px solid #d1d1d1
-		top: 28%
-		left: 36%
-.recent-posts-slider__item--left::after
-	transform: rotate(45deg)
-.recent-posts-slider__item--right::after
-	transform: rotate(-135deg)
-	left: 26%
+	&:hover
+		border: 1px solid #c7b299
+		.recent-posts-slider__inner
+			border-left: 2px solid #c7b299
+			border-bottom: 2px solid #c7b299
+.recent-posts-slider__inner
+	position: absolute
+	display: block
+	content: ''
+	width: 6px
+	height: 6px
+	border-left: 2px solid #d1d1d1
+	border-bottom: 2px solid #d1d1d1
+	top: 6px
+	right: 6px
+	margin-left: auto
+	margin-right: auto
+.recent-posts-slider__item--left
+	.recent-posts-slider__inner
+		transform: rotate(45deg)
+.recent-posts-slider__item--right
+	.recent-posts-slider__inner
+		transform: rotate(-135deg)
+		right: 7px
 .clients
 	// height: 489px
 	background-image: linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), $bg-clients
@@ -812,7 +836,7 @@ a, label
 		p
 			color: #c7b299
 .footer-bg-section__date
-	+fnt-montseratt(300, 12px, 20px)
+	+fnt-montseratt(400, 12px, 20px)
 	color: #363636
 .footer-bg-section__link
 	display: flex
@@ -870,7 +894,7 @@ a, label
 	display: flex
 	flex-direction: row
 	justify-content: space-between
-	+fnt-montseratt(300, 13px, 20px)
+	+fnt-montseratt(400, 13px, 20px)
 	color: #555555
 .footer-sm-left
 	display: flex
@@ -887,9 +911,9 @@ a, label
 	align-items: center
 .footer-sm__separator
 	width: 1px
-	height: 15px
+	height: 11px
 	margin: 0 10px
-	background-color: #555555
+	background-color: #292727
 .footer-sm__selection
 	color: #959595
 .footer-sm__p

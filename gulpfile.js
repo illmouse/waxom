@@ -34,7 +34,7 @@ gulp.task('sass', function() {
 });
 
 gulp.task('sass-reload', ['sass'], function() {
-    browserSync.reload({stream: true});
+    browserSync.reload();
 });
 
 
@@ -46,10 +46,10 @@ gulp.task('pug', function() {
 });
 
 gulp.task('pug-reload', ['pug'], function() {
-    browserSync.reload({stream: true});
+    browserSync.reload();
 });
 
-gulp.task('watch', ['browserSync', 'sass', 'pug'], function() {
+gulp.task('watch', ['sass-reload', 'pug-reload', 'browserSync'], function() {
 	gulp.watch(sass_in, ['sass-reload']);
 	gulp.watch(pug_in, ['pug-reload']);
 });
