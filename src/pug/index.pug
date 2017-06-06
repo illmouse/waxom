@@ -141,7 +141,7 @@ html(lang='en')
           h2.browser-preview__header Waxom is Realization of your Ideas.
           p.browser-preview__text
             | Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius. Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium.
-      section.purchase-now
+      aside.purchase-now
         .purchase-now-wrapper
           h2.purchase-now__header
             span.letterhead Waxom
@@ -196,7 +196,7 @@ html(lang='en')
             for project in projectsContent
               +projects-blocks(project)
           button.projects__button Load More
-      aside.presentation
+      section.presentation
         .presentation-wrapper
           a.presentation__playbtn(href='#')
           h2.presentation__h2 Waxom Video Presentation
@@ -256,18 +256,17 @@ html(lang='en')
             | Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius. Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium.
           .recent-posts-preview
             - var i = 1
-            - for (; i<=3; i++) {
-              a(href="#")
-                article(class="recent-posts-block recent-posts-block--" + i)
-                  .recent-posts-block-date
-                    .recent-posts-block-date__date 30
-                    .recent-posts-block-date__month Sep.
-                  .recent-posts-block-bottom
-                    h3.recent-posts-block-bottom__header Lorem ipsum dolor sit amet
-                    p.recent-posts-block-bottom__text Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium.
-                    .recent-posts-block-bottom__link Read More
-            - }
-          aside.recent-posts-slider
+            - for (; i<=3; i++)
+                a(href="#")
+                  article(class="recent-posts-block recent-posts-block--" + i)
+                    .recent-posts-block-date
+                      .recent-posts-block-date__date 30
+                      .recent-posts-block-date__month Sep.
+                    .recent-posts-block-bottom
+                      h3.recent-posts-block-bottom__header Lorem ipsum dolor sit amet
+                      p.recent-posts-block-bottom__text Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium.
+                      .recent-posts-block-bottom__link Read More
+          .recent-posts-slider
             .recent-posts-slider__item.recent-posts-slider__item--left
             .recent-posts-slider__item.recent-posts-slider__item--right
       .clients
